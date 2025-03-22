@@ -85,7 +85,7 @@
                                 style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                                 <!-- Ikon Database -->
                                 <i class="fa fa-database" style="margin-right: 8px;"></i>
-                                Universitas/Sekolah/Instansi
+                                Proses Pelaksanaan
                             </button>
                         </a>
 
@@ -96,7 +96,7 @@
                                 style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                                 <!-- Ikon Pendidikan -->
                                 <i class="fa fa-graduation-cap" style="margin-right: 8px;"></i>
-                                Jenjang Pendidikan
+                                Jenis Pekerjaan
                             </button>
                         </a>
 
@@ -107,7 +107,7 @@
                                 style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                                 <!-- Ikon Pekerjaan -->
                                 <i class="fa fa-briefcase" style="margin-right: 8px;"></i>
-                                Jabatan Kerja
+                                Status Pekerjaan
                             </button>
                         </a>
 
@@ -118,7 +118,7 @@
                                 style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                                 <!-- Ikon Level -->
                                 <i class="fa fa-level-up" style="margin-right: 8px;"></i>
-                                Jenjang
+                                Sumber Dana
                             </button>
                         </a>
 
@@ -129,18 +129,7 @@
                                 style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                                 <!-- Ikon LPS -->
                                 <i class="fa fa-university" style="margin-right: 8px;"></i>
-                                LPS Penerbit
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.styfle.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Jurusan -->
-                                <i class="fa fa-bookmark" style="margin-right: 8px;"></i>
-                                Jurusan
+                                Tahun Pelaksanaan
                             </button>
                         </a>
 
@@ -276,7 +265,7 @@
             setInterval(updateStatus, 1000);
         </script>
 
-         <td style="text-align: left; text-transform:capitalize">{{$item->dinas}}</td>
+<td style="text-align: left; text-transform: capitalize;">{{$item->dinas}}</td>
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/bepaketpekerjaan/show/{{$item->namapekerjaan}}" class="btn btn-sm btn-info me-2" title="Show">
