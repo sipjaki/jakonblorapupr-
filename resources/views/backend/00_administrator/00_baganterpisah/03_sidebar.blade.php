@@ -777,7 +777,7 @@
                     <!-- Ikon untuk Kelembagaan -->
                     <i class="nav-icon bi bi-person-workspace text-success"></i> <!-- Ikon untuk Kelembagaan -->
                     <p style="color: white">
-                        {{-- Kelembagaan --}}
+                        Kelembagaan
                     </p>
                 </a>
             </li>
