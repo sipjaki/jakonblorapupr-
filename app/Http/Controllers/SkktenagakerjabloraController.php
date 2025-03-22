@@ -400,7 +400,7 @@ return redirect()->back()->with('error', 'Item not found');
             $entry->delete();
 
             // Redirect atau memberi respons sesuai kebutuhan
-            return redirect('/beskkall')->with('delete', 'Data Berhasil Di Hapus !');
+            return redirect('/beskkallblora')->with('delete', 'Data Berhasil Di Hapus !');
 
             }
 
