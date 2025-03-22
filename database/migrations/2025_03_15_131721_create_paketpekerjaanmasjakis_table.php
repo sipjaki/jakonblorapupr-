@@ -26,8 +26,8 @@ return new class extends Migration
             $table->decimal('nilaikontrak', 15, 2)->nullable(); // Menggunakan tipe decimal untuk nilai kontrak
             $table->string('jeniskontrak')->nullable();
             $table->string('karakteristikkontrak')->nullable();
-            $table->string('bulanmulai')->nullable(); // Menyimpan tanggal mulai
-            $table->string('bulanselesai')->nullable(); // Menyimpan tanggal selesai
+            $table->date('bulanmulai')->nullable(); // Menyimpan tanggal mulai
+            $table->date('bulanselesai')->nullable(); // Menyimpan tanggal selesai
             $table->string('dinas')->nullable();
             $table->softDeletes();
             $table->timestamps();

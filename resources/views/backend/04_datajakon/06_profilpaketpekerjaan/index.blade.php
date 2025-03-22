@@ -136,7 +136,7 @@
                         <a href="/404">
                             <button
                                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                                onmouseout="this.styfle.backgroundColor='#0010a3'; this.style.color='white';"
                                 style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                                 <!-- Ikon Jurusan -->
                                 <i class="fa fa-bookmark" style="margin-right: 8px;"></i>
@@ -180,7 +180,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/beskkallblora?search=${input}`)
+                            fetch(`/bepaketpekerjaan?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -213,45 +213,39 @@
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 400px; text-align:center;">Nama Lengkap</th>
-         <th style="width: 400px; text-align:center;">Alamat </th>
-         <th style="width: 100px; text-align:center;">Tahun Lulus</th>
-         <th style="width: 300px; text-align:center;">Asosiasi</th>
-         <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
-         <th style="width: 100px; text-align:center;">Pendidikan</th>
-         <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
-         <th style="width: 100px; text-align:center;">Jenjang</th>
-         <th style="width: 400px; text-align:center;">LPS Penerbit</th>
-         <th style="width: 200px; text-align:center;">Jurusan</th>
-         <th style="width: 200px; text-align:center;">Tanggal Terbit</th>
-         <th style="width: 200px; text-align:center;">Tanggal Habis</th>
-         <th style="width: 200px; text-align:center;">Masa Berlaku</th>
-         <th style="width: 200px; text-align:center;">Status Terbit</th>
+         <th style="width: 400px; text-align:center;">Jenis Pekerjaan</th>
+         <th style="width: 400px; text-align:center;">Nama Pekerjaan</th>
+         <th style="width: 400px; text-align:center;">Paket Status Pekerjaan</th>
+         <th style="width: 100px; text-align:center;">Sumber Dana</th>
+         <th style="width: 300px; text-align:center;">Pelaksanaan</th>
+         <th style="width: 400px; text-align:center;">CV/PT</th>
+         <th style="width: 100px; text-align:center;">NIB</th>
+         <th style="width: 400px; text-align:center;">Nilai Kontrak</th>
+         <th style="width: 100px; text-align:center;">Jenis Kontrak</th>
+         <th style="width: 400px; text-align:center;">Karakteristik</th>
+         <th style="width: 200px; text-align:center;">Mulai</th>
+         <th style="width: 200px; text-align:center;">Selesai</th>
+         <th style="width: 200px; text-align:center;">Dinas</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
-     @foreach ($data as $item )
+     @foreach ($data as $item)
      <tr class="align-middle">
-         <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->nama}}</td>
-         <td style="text-align: left;">{{$item->alamat}}</td>
-         <td style="text-align: center;">{{$item->tahunlulus}}</td>
-         <td style="text-align: center;">
-            @if($item->asosiasimasjaki)
-                {{ $item->asosiasimasjaki->namaasosiasi }}
-            @else
-                <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
-            @endif
-        </td>
-        <td style="text-align: left;">{{$item->namasekolah->namasekolah}}</td>
-         <td style="text-align: center;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-         <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
-         <td style="text-align: center;">{{$item->jenjang->jenjang}}</td>
-         <td style="text-align: left;">{{$item->lpspenerbit->lpspenerbit}}</td>
-         <td style="text-align: left;">{{$item->jurusan->jurusan}}</td>
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalterbit)->translatedFormat('l, d F Y') }}</td>
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalhabis)->translatedFormat('l, d F Y') }}</td>
+         <td style="text-align: center;">{{$loop->iteration }}</td>
+         <td style="text-align: left;">{{$item->profiljenispekerjaan->profiljenispekerjaan}}</td>
+         <td style="text-align: left;">{{$item->namapekerjaan}}</td>
+         <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
+         <td style="text-align: left;">{{$item->sumberdana->sumberdana}}</td>
+         <td style="text-align: left;">{{$item->tahunpilihan->tahunpilihan}}</td>
+         <td style="text-align: center;">{{$item->cvptpenyedia}}</td>
+         <td style="text-align: center;">{{$item->nib}}</td>
+         <td style="text-align: center;">{{$item->nilaikontrak}}</td>
+         <td style="text-align: center;">{{$item->jeniskontrak}}</td>
+         <td style="text-align: center;">{{$item->karakteristikkontrak}}</td>
+
+         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->bulanmulai)->translatedFormat('l, d F Y') }}</td>
+         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->bulanselesai)->translatedFormat('l, d F Y') }}</td>
 
          <td style="text-align: center;">
             <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
@@ -260,14 +254,14 @@
         <script>
             function updateStatus() {
                 let now = new Date().getTime();
-                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->tanggalhabis)->format('Y-m-d H:i:s') }}").getTime();
+                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->bulanselesai)->format('Y-m-d H:i:s') }}").getTime();
                 let statusButton = document.getElementById("status-{{ $item->id }}");
 
                 if (now > tanggalHabis) {
-                    statusButton.innerText = "TIDAK BERLAKU";
-                    statusButton.className = "btn btn-danger btn-sm";
+                    statusButton.innerText = "ON PROGRESS";
+                    statusButton.className = "btn btn-primary btn-sm";
                 } else {
-                    statusButton.innerText = "BERLAKU";
+                    statusButton.innerText = "SELESAI";
                     statusButton.className = "btn btn-success btn-sm";
                 }
             }
@@ -279,10 +273,10 @@
             setInterval(updateStatus, 1000);
         </script>
 
-         <td style="text-align: center;">{{$item->statusterbit}}</td>
+         <td style="text-align: center;">{{$item->dinas}}</td>
 
          <td style="text-align: center; vertical-align: middle;">
-             <a href="/beskkallblora/show/{{$item->nama}}" class="btn btn-sm btn-info me-2" title="Show">
+             <a href="/bepaketpekerjaan/show/{{$item->namapekerjaan}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a>
              <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
@@ -290,7 +284,7 @@
              </a>
              <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
-                   data-judul="{{ $item->nama }}"
+                   data-judul="{{ $item->namapekerjaan }}"
                    onclick="setDeleteUrl(this)">
                     <i class="bi bi-trash"></i>
             </a>
@@ -337,7 +331,7 @@
                  function setDeleteUrl(button) {
                      var nama = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = nama;
-                     var deleteUrl = "/beskkallblora/delete/" + encodeURIComponent(nama);
+                     var deleteUrl = "/bepaketpekerjaan/delete/" + encodeURIComponent(nama);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
