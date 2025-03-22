@@ -53,6 +53,29 @@
                         </button>
                         </h2>
 
+                            <button id="status-{{ $data->id }}" class="btn btn-sm"></button>
+
+                        <script>
+                            function updateStatus() {
+                                let now = new Date().getTime();
+                                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($data->tanggalhabis)->format('Y-m-d H:i:s') }}").getTime();
+                                let statusButton = document.getElementById("status-{{ $data->id }}");
+
+                                if (now > tanggalHabis) {
+                                    statusButton.innerText = "TIDAK BERLAKU";
+                                    statusButton.className = "btn btn-danger btn-sm";
+                                } else {
+                                    statusButton.innerText = "BERLAKU";
+                                    statusButton.className = "btn btn-success btn-sm";
+                                }
+                            }
+
+                            // Jalankan pertama kali saat halaman dimuat
+                            updateStatus();
+
+                            // Update setiap 1 detik untuk realtime
+                            setInterval(updateStatus, 1000);
+                        </script>
 
                     </div>
 
