@@ -29,6 +29,7 @@ return new class extends Migration
             $table->date('bulanmulai')->nullable(); // Menyimpan tanggal mulai
             $table->date('bulanselesai')->nullable(); // Menyimpan tanggal selesai
             $table->string('dinas')->nullable();
+            $table->integer('progress')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

@@ -11647,6 +11647,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
     'bulanmulai'                 => '2024-08-01',
     'bulanselesai'               => '2024-12-01',
+    'progress'                   => 50,
     'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
 ]);
 
@@ -11664,6 +11665,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
     'bulanmulai'                 => '2024-10-01',
     'bulanselesai'               => '2024-12-01',
+    'progress'                   => 50,
     'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
 ]);
 
@@ -11681,6 +11683,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
     'bulanmulai'                 => '2024-07-01',
     'bulanselesai'               => '2024-12-01',
+    'progress'                   => 50,
     'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
 ]);
 
@@ -11698,6 +11701,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
     'bulanmulai'                 => '2024-08-01',
     'bulanselesai'               => '2024-12-01',
+    'progress'                   => 50,
     'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
 ]);
 
@@ -11715,6 +11719,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
     'bulanmulai'                 => '2024-08-01',
     'bulanselesai'               => '2024-11-01',
+    'progress'                   => 50,
     'dinas'                      => 'DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN'
 ]);
 
@@ -11732,6 +11737,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
     'bulanmulai'                 => '2024-08-01',
     'bulanselesai'               => '2024-12-01',
+    'progress'                   => 50,
     'dinas'                      => 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG'
 ]);
 
