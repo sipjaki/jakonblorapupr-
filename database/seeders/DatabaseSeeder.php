@@ -11645,8 +11645,8 @@ paketpekerjaanmasjaki::create([
     'sumberdana_id'              => 2,
     'jeniskontrak'               => 'Harga Satuan',
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Agustus',
-    'bulanselesai'               => 'Desember',
+    'bulanmulai'                 => '2024-08-01',
+    'bulanselesai'               => '2024-12-01',
     'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
 ]);
 
@@ -11662,8 +11662,8 @@ paketpekerjaanmasjaki::create([
     'sumberdana_id'              => 2,
     'jeniskontrak'               => 'Harga Satuan',
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Oktober',
-    'bulanselesai'               => 'Desember',
+    'bulanmulai'                 => '2024-10-01',
+    'bulanselesai'               => '2024-12-01',
     'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
 ]);
 
@@ -11679,8 +11679,8 @@ paketpekerjaanmasjaki::create([
     'sumberdana_id'              => 2,
     'jeniskontrak'               => 'Harga Satuan',
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Juli',
-    'bulanselesai'               => 'Desember',
+    'bulanmulai'                 => '2024-07-01',
+    'bulanselesai'               => '2024-12-01',
     'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
 ]);
 
@@ -11696,8 +11696,8 @@ paketpekerjaanmasjaki::create([
     'sumberdana_id'              => 2,
     'jeniskontrak'               => 'Harga Satuan',
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Agustus',
-    'bulanselesai'               => 'Desember',
+    'bulanmulai'                 => '2024-08-01',
+    'bulanselesai'               => '2024-12-01',
     'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
 ]);
 
@@ -11713,8 +11713,8 @@ paketpekerjaanmasjaki::create([
     'sumberdana_id'              => 2,
     'jeniskontrak'               => 'Harga Satuan',
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Agustus',
-    'bulanselesai'               => 'November',
+    'bulanmulai'                 => '2024-08-01',
+    'bulanselesai'               => '2024-11-01',
     'dinas'                      => 'DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN'
 ]);
 
@@ -11730,8 +11730,8 @@ paketpekerjaanmasjaki::create([
     'sumberdana_id'              => 2,
     'jeniskontrak'               => 'Harga Satuan',
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Agustus',
-    'bulanselesai'               => 'Desember',
+    'bulanmulai'                 => '2024-08-01',
+    'bulanselesai'               => '2024-12-01',
     'dinas'                      => 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG'
 ]);
 
