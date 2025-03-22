@@ -213,19 +213,20 @@
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 400px; text-align:center;">Jenis Pekerjaan</th>
+         <th style="width: 250px; text-align:center;">Jenis Pekerjaan</th>
          <th style="width: 400px; text-align:center;">Nama Pekerjaan</th>
          <th style="width: 400px; text-align:center;">Paket Status Pekerjaan</th>
          <th style="width: 100px; text-align:center;">Sumber Dana</th>
-         <th style="width: 300px; text-align:center;">Pelaksanaan</th>
+         <th style="width: 125px; text-align:center;">Pelaksanaan</th>
          <th style="width: 400px; text-align:center;">CV/PT</th>
-         <th style="width: 100px; text-align:center;">NIB</th>
+         <th style="width: 300px; text-align:center;">NIB</th>
          <th style="width: 400px; text-align:center;">Nilai Kontrak</th>
-         <th style="width: 100px; text-align:center;">Jenis Kontrak</th>
-         <th style="width: 400px; text-align:center;">Karakteristik</th>
+         <th style="width: 225px; text-align:center;">Jenis Kontrak</th>
+         <th style="width: 200px; text-align:center;">Karakteristik</th>
          <th style="width: 200px; text-align:center;">Mulai</th>
          <th style="width: 200px; text-align:center;">Selesai</th>
-         <th style="width: 200px; text-align:center;">Dinas</th>
+         <th style="width: 200px; text-align:center;">Status</th>
+         <th style="width: 400px; text-align:center;">Dinas</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
@@ -233,14 +234,14 @@
      @foreach ($data as $item)
      <tr class="align-middle">
          <td style="text-align: center;">{{$loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->profiljenispekerjaan->profiljenispekerjaan}}</td>
+         <td style="text-align: left;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
          <td style="text-align: left;">{{$item->namapekerjaan}}</td>
          <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
-         <td style="text-align: left;">{{$item->sumberdana->sumberdana}}</td>
+         <td style="text-align: center;">{{$item->sumberdana->sumberdana}}</td>
          <td style="text-align: left;">{{$item->tahunpilihan->tahunpilihan}}</td>
-         <td style="text-align: center;">{{$item->cvptpenyedia}}</td>
+         <td style="text-align: left;">{{$item->cvptpenyedia}}</td>
          <td style="text-align: center;">{{$item->nib}}</td>
-         <td style="text-align: center;">{{$item->nilaikontrak}}</td>
+         <td style="text-align: left;">Rp {{ number_format($item->nilaikontrak, 0, ',', '.') }}</td>
          <td style="text-align: center;">{{$item->jeniskontrak}}</td>
          <td style="text-align: center;">{{$item->karakteristikkontrak}}</td>
 
