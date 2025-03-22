@@ -289,7 +289,7 @@
                    border-radius: 10px;">
         </div>
         <!-- Text inside the progress bar -->
-        <div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;">
+        <div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; color: black; font-weight: bold;">
             {{$item->progress}}%
         </div>
     </div>
