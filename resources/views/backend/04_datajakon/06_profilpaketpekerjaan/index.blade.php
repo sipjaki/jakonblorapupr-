@@ -269,26 +269,26 @@
 
 
 <td style="text-align: left;">
-    <div style="width: 100%; background-color: #ddd; border-radius: 10px; height: 20px;">
+    <div style="width: 100%; background-color: #ddd; border-radius: 10px; height: 20px; position: relative;">
+        <!-- Progress bar -->
         <div
             style="width: {{$item->progress}}%;
                    background-color:
-                   @if($item->progress < 25)
-                       red;
-                   @elseif($item->progress < 50)
-                       orange;
-                   @elseif($item->progress < 75)
-                       blue;
-                   @elseif($item->progress < 100)
-                       lightgreen;
-                   @else
-                       green;
-                   @endif
+                   @if($item->progress < 25) red
+                   @elseif($item->progress < 50) orange
+                   @elseif($item->progress < 75) lightblue
+                   @elseif($item->progress < 100) lightgreen
+                   @else green;
                    height: 100%;
                    border-radius: 10px;">
         </div>
+        <!-- Text inside the progress bar -->
+        <div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;">
+            {{$item->progress}}%
+        </div>
     </div>
 </td>
+
 
 
 <td style="text-align: left;">{{ ucfirst(strtolower($item->dinas)) }}</td>
