@@ -274,11 +274,17 @@
         <div
             style="width: {{$item->progress}}%;
                    background-color:
-                   @if($item->progress < 25) red
-                   @elseif($item->progress < 50) orange
-                   @elseif($item->progress < 75) lightblue
-                   @elseif($item->progress < 100) lightgreen
-                   @else green;
+                   @if($item->progress < 25)
+                       red;
+                   @elseif($item->progress < 50)
+                       orange;
+                   @elseif($item->progress < 75)
+                       lightblue;
+                   @elseif($item->progress < 100)
+                       lightgreen;
+                   @else
+                       green;
+                   @endif
                    height: 100%;
                    border-radius: 10px;">
         </div>
