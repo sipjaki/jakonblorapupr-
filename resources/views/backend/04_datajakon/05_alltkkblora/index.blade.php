@@ -80,15 +80,18 @@
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                         <a href="/404">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
-                             style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-database" style="margin-right: 8px;"></i>
-                             Universitas/Sekolah/Instansi
-                         </button>
-                         </a>
+                            <button
+                                onmouseover="this.style.color='black';"
+                                onmouseout="this.style.color='white';"
+                                style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                                       border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                                       transition: color 0.3s; text-decoration: none;">
+                                <!-- Ikon Kembali -->
+                                <i class="fa fa-database" style="margin-right: 8px;"></i>
+                                Universitas/Sekolah/Instansi
+                            </button>
+                        </a>
+
 
                          <a href="/404">
                              <button
