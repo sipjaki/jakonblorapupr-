@@ -78,6 +78,7 @@
                 </div>
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
                         <a href="/404">
                             <button
                                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
