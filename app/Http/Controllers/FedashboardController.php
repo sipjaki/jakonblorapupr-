@@ -35,8 +35,8 @@ class FedashboardController extends Controller
 
 
         // return view('frontend.00_full.index', [
-        // return view('404', [
-        return view('frontend.00_approve.00_utama.index', [
+        return view('404', [
+        // return view('frontend.00_approve.00_utama.index', [
             'title' => 'Mas Jaki DPUPR Blora | Sistem Informasi Pembina Jasa Konstruksi ',
             'data' => $data, // Mengirimkan data paginasi ke view
             'dataartikel' => $dataartikel, // Mengirimkan data paginasi ke view
