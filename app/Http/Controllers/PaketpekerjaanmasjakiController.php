@@ -80,4 +80,99 @@ class PaketpekerjaanmasjakiController extends Controller
     }
 
 
+    // MENU BACKEND PROFIL PAKET PEKERJAAN
+
+
+    public function bepaketpekerjaan(Request $request)
+    {
+            $perPage = $request->input('perPage', 15);
+            $search = $request->input('search');
+
+            $query = paketpekerjaanmasjaki::query();
+
+            if ($search) {
+                $query->where('namapekerjaan', 'LIKE', "%{$search}%")
+                    ->orWhere('cvptpenyedia', 'LIKE', "%{$search}%")
+                    ->orWhere('nib', 'LIKE', "%{$search}%")
+                    ->orWhere('nilaikontrak', 'LIKE', "%{$search}%")
+                    ->orWhere('jeniskontrak', 'LIKE', "%{$search}%")
+                    ->orWhere('karakteristikkontrak', 'LIKE', "%{$search}%")
+                    ->orWhere('bulanmulai', 'LIKE', "%{$search}%")
+                    ->orWhere('bulanselesai', 'LIKE', "%{$search}%")
+                    ->orWhere('dinas', 'LIKE', "%{$search}%")
+        // -------------------------------------------------------------------------------
+                    ->orWhereHas('profiljenispekerjaan', function ($q) use ($search) {
+                        $q->where('jenispekerjaan', 'LIKE', "%{$search}%");
+                    })
+
+                    ->orWhereHas('paketstatuspekerjaan', function ($q) use ($search) {
+                        $q->where('paketstatuspekerjaan', 'LIKE', "%{$search}%");
+                    })
+
+                    ->orWhereHas('sumberdana', function ($q) use ($search) {
+                        $q->where('sumberdana', 'LIKE', "%{$search}%");
+                    })
+
+                    ->orWhereHas('tahunpilihan', function ($q) use ($search) {
+                        $q->where('tahunpilihan', 'LIKE', "%{$search}%");
+                    });
+
+            }
+
+            $data = $query->paginate($perPage);
+
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('backend.04_datajakon.06_profilpaketpekerjaan.partials.table', compact('data'))->render()
+                ]);
+            }
+
+            return view('backend.04_datajakon.06_profilpaketpekerjaan.index', [
+                'title' => 'Profil Paket Pekerjaan Konstruksi dan Konsultasi Konstruksi',
+                'data' => $data,
+                'perPage' => $perPage,
+                'search' => $search
+            ]);
+    }
+
+    // TKK DPUPR BLORA SHOW
+
+    public function bepaketpekerjaanshow($namapekerjaan)
+    {
+            $datapaketpekerjaan = paketpekerjaanmasjaki::where('namapekerjaan', $namapekerjaan)->first();
+        // Ambil data user saat ini
+            $user = Auth::user();
+
+        return view('backend.04_datajakon.06_profilpaketpekerjaan.show', [
+            'title' => 'Data Details Paket Pekerjaan Konstruksi dan Konsultasi Konstruksi',
+            'data' => $datapaketpekerjaan,
+        ]);
+    }
+
+
+        public function bepaketpekerjaandelete($namapekerjaan)
+        {
+        // Cari item berdasarkan judul
+            $entry = paketpekerjaanmasjaki::where('namapekerjaan', $namapekerjaan)->first();
+
+            if ($entry) {
+            // Jika ada file header yang terdaftar, hapus dari storage
+            // if (Storage::disk('public')->exists($entry->header)) {
+                //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/bepaketpekerjaan')->with('delete', 'Data Berhasil Di Hapus !');
+
+            }
+
+        return redirect()->back()->with('error', 'Item not found');
+        }
+
+
+
+
 }

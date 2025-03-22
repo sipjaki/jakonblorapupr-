@@ -515,13 +515,20 @@ Route::get('/beskkdpupr/show/{nama}', [SkktenagakerjabloraController::class, 'be
 Route::delete('/beskkdpupr/delete/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprdelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________
 
-
 // ________________________________________________________________________________________________________________
 // ---------------------- MENU 2 DATA SEMUA SKK TENAGA KERJA KABUPATEN BLORA -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beskkallblora', [SkktenagakerjabloraController::class, 'beskkall'])->middleware('auth');
 Route::get('/beskkallblora/show/{nama}', [SkktenagakerjabloraController::class, 'beskkallshow'])->middleware('auth');
 Route::delete('/beskkallblora/delete/{nama}', [SkktenagakerjabloraController::class, 'beskkalldelete'])->middleware('auth');
+// ___________________________________________________________________________________________________________________________________
+
+// ________________________________________________________________________________________________________________
+// ---------------------- MENU 3 PROFIL PAKET PEKERJAAN -----------------------------------------------------
+// ___________________________________________________________________________________________________________________________________
+Route::get('/bepaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaan'])->middleware('auth');
+Route::get('/bepaketpekerjaan/show/{nama}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaanshow'])->middleware('auth');
+Route::delete('/bepaketpekerjaan/delete/{nama}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaandelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________
 
 

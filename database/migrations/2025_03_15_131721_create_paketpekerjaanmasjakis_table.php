@@ -13,16 +13,17 @@ return new class extends Migration
     {
         Schema::create('paketpekerjaanmasjakis', function (Blueprint $table) {
             $table->id();
+            // ----------------------------------------------------------------
             $table->foreignId('prosespaket_id')->nullable();
             $table->foreignId('profiljenispekerjaan_id')->nullable();
             $table->foreignId('paketstatuspekerjaan_id')->nullable();
             $table->foreignId('sumberdana_id')->nullable();
+            $table->foreignId('tahunpilihan_id')->nullable();
+            // ----------------------------------------------------------------
             $table->string('namapekerjaan')->nullable();
-            $table->string('tahunpilihan_id')->nullable();
             $table->string('cvptpenyedia')->nullable();
             $table->string('nib')->nullable();
             $table->decimal('nilaikontrak', 15, 2)->nullable(); // Menggunakan tipe decimal untuk nilai kontrak
-            // $table->string('sumberdana')->nullable();
             $table->string('jeniskontrak')->nullable();
             $table->string('karakteristikkontrak')->nullable();
             $table->string('bulanmulai')->nullable(); // Menyimpan tanggal mulai
