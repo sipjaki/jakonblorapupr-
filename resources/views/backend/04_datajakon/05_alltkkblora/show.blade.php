@@ -56,56 +56,58 @@
                                 {{ $data->nama }}
                             </button>
                         </h2>
-
                         <button id="status-{{ $data->id }}" class="btn btn-sm"></button>
 
-<script>
-    function updateStatus() {
-        let now = new Date().getTime();
-        let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($data->tanggalhabis)->format('Y-m-d H:i:s') }}").getTime();
-        let statusButton = document.getElementById("status-{{ $data->id }}");
+                        <script>
+                            function updateStatus() {
+                                let now = new Date().getTime();
+                                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($data->tanggalhabis)->format('Y-m-d H:i:s') }}").getTime();
+                                let statusButton = document.getElementById("status-{{ $data->id }}");
 
-        // CSS yang digunakan pada tombol
-        let buttonStyle = "background-color: #1d643b; border-color: #1d643b; font-weight: bold; padding: 10px 20px; " +
-                          "border-radius: 5px; font-size: 16px; margin-right: 10px;";
+                                // CSS yang digunakan pada tombol
+                                let buttonStyle = "font-weight: bold; padding: 10px 20px; border-radius: 5px; font-size: 16px; margin-right: 10px;";
 
-        if (now > tanggalHabis) {
-            statusButton.innerText = "TIDAK BERLAKU";
-            statusButton.setAttribute("style", buttonStyle); // Set button styles
-            statusButton.className = "btn btn-danger btn-sm"; // Update class for 'danger' status
-            statusButton.onmouseover = function() {
-                statusButton.style.backgroundColor = '#ffffff';
-                statusButton.style.color = '#000000';
-                statusButton.style.borderColor = '#1d643b';
-            };
-            statusButton.onmouseout = function() {
-                statusButton.style.backgroundColor = '#1d643b';
-                statusButton.style.color = '#ffffff';
-                statusButton.style.borderColor = '#1d643b';
-            };
-        } else {
-            statusButton.innerText = "BERLAKU";
-            statusButton.setAttribute("style", buttonStyle); // Set button styles
-            statusButton.className = "btn btn-success btn-sm"; // Update class for 'success' status
-            statusButton.onmouseover = function() {
-                statusButton.style.backgroundColor = '#ffffff';
-                statusButton.style.color = '#000000';
-                statusButton.style.borderColor = '#1d643b';
-            };
-            statusButton.onmouseout = function() {
-                statusButton.style.backgroundColor = '#1d643b';
-                statusButton.style.color = '#ffffff';
-                statusButton.style.borderColor = '#1d643b';
-            };
-        }
-    }
+                                if (now > tanggalHabis) {
+                                    statusButton.innerText = "TIDAK BERLAKU";
+                                    statusButton.setAttribute("style", buttonStyle + " background-color: red; border-color: red; color: white;"); // Set to red for "TIDAK BERLAKU"
+                                    statusButton.className = "btn btn-danger btn-sm"; // Update class for 'danger' status
 
-    // Jalankan pertama kali saat halaman dimuat
-    updateStatus();
+                                    // Hover effect: keep background white on hover
+                                    statusButton.onmouseover = function() {
+                                        statusButton.style.backgroundColor = '#ffffff';
+                                        statusButton.style.color = '#000000'; // Color becomes black when hovered
+                                        statusButton.style.borderColor = 'red'; // Keep red border
+                                    };
+                                    statusButton.onmouseout = function() {
+                                        statusButton.style.backgroundColor = 'red';
+                                        statusButton.style.color = 'white'; // Keep white text when mouse out
+                                        statusButton.style.borderColor = 'red'; // Keep red border
+                                    };
+                                } else {
+                                    statusButton.innerText = "BERLAKU";
+                                    statusButton.setAttribute("style", buttonStyle + " background-color: #1d643b; border-color: #1d643b; color: white;");
+                                    statusButton.className = "btn btn-success btn-sm"; // Update class for 'success' status
 
-    // Update setiap 1 detik untuk realtime
-    setInterval(updateStatus, 1000);
-</script>
+                                    // Hover effect: keep background white on hover
+                                    statusButton.onmouseover = function() {
+                                        statusButton.style.backgroundColor = '#ffffff';
+                                        statusButton.style.color = '#000000'; // Color becomes black when hovered
+                                        statusButton.style.borderColor = '#1d643b'; // Keep original border color
+                                    };
+                                    statusButton.onmouseout = function() {
+                                        statusButton.style.backgroundColor = '#1d643b';
+                                        statusButton.style.color = 'white'; // Keep white text when mouse out
+                                        statusButton.style.borderColor = '#1d643b'; // Keep original border color
+                                    };
+                                }
+                            }
+
+                            // Jalankan pertama kali saat halaman dimuat
+                            updateStatus();
+
+                            // Update setiap 1 detik untuk realtime
+                            setInterval(updateStatus, 1000);
+                        </script>
 
                     </div>
 
