@@ -62,12 +62,12 @@
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
-                 <div class="card-header">
+                <div class="card-header">
                     <div style="
                     font-weight: 900;
                     font-size: 16px;
                     text-align: center;
-                    background: linear-gradient(135deg, #166534, #166534);
+                    background: linear-gradient(135deg, #0010a3, #0010a3);
                     color: white;
                     padding: 8px 10px;
                     border-radius: 10px;
