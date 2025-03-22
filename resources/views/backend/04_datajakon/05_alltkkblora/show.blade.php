@@ -50,14 +50,15 @@
                             Data Details :
                             <button class="btn btn-success"
                                     style="background-color: #1d643b; border-color: #1d643b; font-weight: bold; padding: 10px 20px;
-                                           border-radius: 5px; font-size: 16px;"
+                                           border-radius: 5px; font-size: 16px; margin-right: 10px;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000'; this.style.borderColor='#1d643b';"
                                     onmouseout="this.style.backgroundColor='#1d643b'; this.style.color='#ffffff'; this.style.borderColor='#1d643b';">
                                 {{ $data->nama }}
                             </button>
                         </h2>
 
-                        <button id="status-{{ $data->id }}" class="btn btn-sm" style="padding: 10px 20px; border-radius: 5px; font-size: 14px;"></button>
+                        <button id="status-{{ $data->id }}" class="btn btn-sm"
+                                style="padding: 10px 20px; border-radius: 5px; font-size: 14px; margin-right: 10px;"></button>
 
                         <script>
                             function updateStatus() {
