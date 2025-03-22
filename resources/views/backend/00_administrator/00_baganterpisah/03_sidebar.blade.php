@@ -256,7 +256,7 @@
 
                   <!-- Profil Paket Pekerjaan Konstruksi -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/bepaketpekerjaan" class="nav-link">
                       <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
                       <p style="color: white">Profil Paket Pekerjaan</p>
                     </a>
