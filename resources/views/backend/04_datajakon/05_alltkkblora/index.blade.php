@@ -81,13 +81,13 @@
 
                         <a href="/404">
                             <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white';"
-                                style="background: linear-gradient(135deg, #2C3E50, #5D9CEC); color: white; border: none; margin-right: 10px;
-                                       padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex;
-                                       align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon dengan tema yang lebih cocok (misalnya ikon rumah atau aplikasi) -->
-                                <i class="fa fa-home" style="margin-right: 8px;"></i> <!-- Ikon rumah sebagai contoh -->
+                                onmouseover="this.style.color='black';"
+                                onmouseout="this.style.color='white';"
+                                style="background: linear-gradient(135deg, #2C3E50, #5D9CEC);  color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                                       border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                                       transition: color 0.3s; text-decoration: none;">
+                                <!-- Ikon Kembali -->
+                                <i class="fa fa-database" style="margin-right: 8px;"></i>
                                 Universitas/Sekolah/Instansi
                             </button>
                         </a>
@@ -96,7 +96,7 @@
                          <a href="/404">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='navy'; this.style.color='white';"
+                             onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
                              style="background: linear-gradient(135deg, #2C3E50, #5D9CEC);  color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                              <!-- Ikon Kembali -->
                              <i class="fa fa-database" style="margin-right: 8px;"></i>
