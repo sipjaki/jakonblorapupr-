@@ -276,7 +276,7 @@
             setInterval(updateStatus, 1000);
         </script>
 
-         <td style="text-align: center;">{{$item->dinas}}</td>
+         <td style="text-align: left; text-transform:capitalize">{{$item->dinas}}</td>
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/bepaketpekerjaan/show/{{$item->namapekerjaan}}" class="btn btn-sm btn-info me-2" title="Show">
