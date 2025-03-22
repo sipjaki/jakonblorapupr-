@@ -220,7 +220,7 @@
          <th style="width: 125px; text-align:center;">Pelaksanaan</th>
          <th style="width: 400px; text-align:center;">CV/PT</th>
          <th style="width: 300px; text-align:center;">NIB</th>
-         <th style="width: 400px; text-align:center;">Nilai Kontrak</th>
+         <th style="width: 300px; text-align:center;">Nilai Kontrak</th>
          <th style="width: 225px; text-align:center;">Jenis Kontrak</th>
          <th style="width: 200px; text-align:center;">Karakteristik</th>
          <th style="width: 200px; text-align:center;">Mulai</th>
@@ -238,10 +238,10 @@
          <td style="text-align: left;">{{$item->namapekerjaan}}</td>
          <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
          <td style="text-align: center;">{{$item->sumberdana->sumberdana}}</td>
-         <td style="text-align: left;">{{$item->tahunpilihan->tahunpilihan}}</td>
+         <td style="text-align: center;">{{$item->tahunpilihan->tahunpilihan}}</td>
          <td style="text-align: left;">{{$item->cvptpenyedia}}</td>
          <td style="text-align: center;">{{$item->nib}}</td>
-         <td style="text-align: left;">Rp {{ number_format($item->nilaikontrak, 0, ',', '.') }}</td>
+         <td style="text-align: left;">Rp. <span class="text-end"> {{ number_format($item->nilaikontrak, 0, ',', '.') }}</span></td>
          <td style="text-align: center;">{{$item->jeniskontrak}}</td>
          <td style="text-align: center;">{{$item->karakteristikkontrak}}</td>
 
