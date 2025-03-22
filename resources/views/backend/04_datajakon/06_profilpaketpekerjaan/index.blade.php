@@ -241,7 +241,7 @@
          <td style="text-align: center;">{{$item->tahunpilihan->tahunpilihan}}</td>
          <td style="text-align: left;">{{$item->cvptpenyedia}}</td>
          <td style="text-align: center;">{{$item->nib}}</td>
-         <td style="text-align: left;">Rp. <span class="text-end"> {{ number_format($item->nilaikontrak, 0, ',', '.') }}</span></td>
+         <td style="text-align: left;">Rp.{{ number_format($item->nilaikontrak, 0, ',', '.') }}</td>
          <td style="text-align: center;">{{$item->jeniskontrak}}</td>
          <td style="text-align: center;">{{$item->karakteristikkontrak}}</td>
 
