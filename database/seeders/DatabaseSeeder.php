@@ -12015,7 +12015,7 @@ kategoripelatihan::create([
 // DATA AGENDA PELATIHAN
 agendapelatihan::create([
     'id' => 1,
-    'user' => 1,
+    'user_id' => 7,
     'kategoripelatihan_id' => '1',
     'namakegiatan' => 'Pelatihan Manajemen Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
@@ -12032,6 +12032,7 @@ agendapelatihan::create([
 
 agendapelatihan::create([
     'id' => 2,
+    'user_id' => 7,
     'kategoripelatihan_id' => '2',
     'namakegiatan' => 'Pelatihan Ahli K3 Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
@@ -12048,6 +12049,7 @@ agendapelatihan::create([
 
 agendapelatihan::create([
     'id' => 3,
+    'user_id' => 7,
     'kategoripelatihan_id' => '3',
     'namakegiatan' => 'Workshop Teknologi Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
@@ -12064,6 +12066,7 @@ agendapelatihan::create([
 
 agendapelatihan::create([
     'id' => 4,
+    'user_id' => 7,
     'kategoripelatihan_id' => '1',
     'namakegiatan' => 'Pelatihan Pengawasan Proyek',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
@@ -12080,6 +12083,7 @@ agendapelatihan::create([
 
 agendapelatihan::create([
     'id' => 5,
+    'user_id' => 7,
     'kategoripelatihan_id' => '2',
     'namakegiatan' => 'Bimbingan Teknis Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
@@ -12096,6 +12100,7 @@ agendapelatihan::create([
 
 agendapelatihan::create([
     'id' => 6,
+    'user_id' => 7,
     'kategoripelatihan_id' => '3',
     'namakegiatan' => 'Seminar Keselamatan Kerja',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
