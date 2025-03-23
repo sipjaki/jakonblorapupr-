@@ -1,6 +1,5 @@
 <style>
 /* Container for the timeline */
-/* Container for the timeline */
 .timeline-container {
   display: flex;
   justify-content: center;
@@ -33,6 +32,7 @@
   margin: 0 auto;
   transition: background-color 0.3s ease;
   z-index: 2;
+  position: relative;
 }
 
 /* Label style */
@@ -48,8 +48,8 @@
   position: absolute;
   top: 50%;
   left: 100%;
-  width: 50px;
-  height: 6px; /* Lebarkan garis penghubung */
+  width: 50px;  /* Garis yang lebih pendek, agar menyatu dengan lingkaran */
+  height: 6px;  /* Lebarkan garis penghubung */
   background-color: #ddd;
   transform: translateY(-50%);
   border-radius: 10px;
@@ -85,6 +85,10 @@
   background-color: green;
 }
 
+/* Untuk lingkaran pertama dan terakhir, agar tetap terhubung tanpa masalah */
+.timeline-item:first-child::after {
+  content: none; /* Tidak ada garis penghubung untuk yang pertama */
+}
 
 </style>
 
