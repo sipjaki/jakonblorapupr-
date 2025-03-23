@@ -24,4 +24,9 @@ class pesertapelatihan extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function jenjangpendidikan()
+    {
+        return $this->belongsTo(jenjangpendidikan::class, 'jenjangpendidikan_id');
+    }
+
 }
