@@ -212,21 +212,21 @@
 <table class="table table-striped">
  <thead>
      <tr>
-         <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 125px; text-align:center;">Kategori Pelatihan</th>
-         <th style="width: 250px; text-align:center;">Nama Kegiatan </th>
-         <th style="width: 300px; text-align:center;">Penyelenggara</th>
-         <th style="width: 100px; text-align:center;">Waktu Peleksanaan</th>
-         <th style="width: 100px; text-align:center;">Penutupan</th>
-         <th style="width: 100px; text-align:center;">Status</th>
-         <th style="width: 100px; text-align:center;">Jumlah Peserta</th>
-         <th style="width: 250px; text-align:center;">Lokasi</th>
-         <th style="width: 250px; text-align:center;">Keterangan</th>
-         <th style="width: 600px; text-align:center;">Isi Agenda</th>
-         <th style="width: 300px; text-align:center;">Foto</th>
-         <th style="width: 300px; text-align:center;">Materi</th>
-         <th style="width: 100px; text-align:center;">Peserta</th>
-         <th style="width: 200px; text-align:center;">Aksi</th>
+         <th style="width: 75px; text-align:center; vertical-align: middle;">No</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Kategori Pelatihan</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Nama Kegiatan </th>
+         <th style="width: 300px; text-align:center; vertical-align: middle;">Penyelenggara</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Waktu Peleksanaan</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Penutupan</th>
+         <th style="width: 100px; text-align:center; vertical-align: middle;">Status</th>
+         <th style="width: 100px; text-align:center; vertical-align: middle;">Jumlah Peserta</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Lokasi</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Keterangan</th>
+         <th style="width: 600px; text-align:center; vertical-align: middle;">Isi Agenda</th>
+         <th style="width: 300px; text-align:center; vertical-align: middle;">Foto</th>
+         <th style="width: 300px; text-align:center; vertical-align: middle;">Materi</th>
+         <th style="width: 100px; text-align:center; vertical-align: middle;">Peserta</th>
+         <th style="width: 200px; text-align:center; vertical-align: middle;">Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
@@ -235,7 +235,7 @@
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
          <td style="text-align: left;">{{$item->namakegiatan}}</td>
-         <td style="text-align: center;">{{$item->penyelenggara}}</td>
+         <td style="text-align: left;">{{$item->penyelenggara}}</td>
          {{-- <td style="text-align: center;">
             @if($item->asosiasimasjaki)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
@@ -274,16 +274,18 @@
             setInterval(updateStatus, 1000);
         </script>
 
-        <td style="text-align: left;">{{$item->jumlahpeserta}}</td>
-         <td style="text-align: center;">{{$item->lokasi}}</td>
-         <td style="text-align: left;">{{$item->keterangan}}</td>
-         <td style="text-align: left;">{{$item->isiagenda}}</td>
+        <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
+         <td style="text-align: left;">{{$item->lokasi}}</td>
+         <td style="text-align: left; text-transform:justify;">{{$item->keterangan}}</td>
+         <td style="text-align: left; text-transform:justify;">{{$item->isiagenda}}</td>
          <td style="text-align: center;">
-            <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" width="200">
+            <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" width="300">
         </td>
-
-         <td style="text-align: left;">{{$item->materi}}</td>
-
+        <td style="text-align: center;">
+            <object data="{{ asset('storage/' . $item->materi) }}" type="application/pdf" width="300" height="200">
+                <p>PDF cannot be displayed.</p>
+            </object>
+        </td>
          <td style="text-align: center; vertical-align: middle; width: 100%; align-items:center;">
             <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->id) }}" style="text-decoration: none;">
             <button
