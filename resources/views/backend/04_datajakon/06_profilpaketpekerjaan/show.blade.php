@@ -1,10 +1,13 @@
 <style>
+/* Timeline container */
 .timeline {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   padding: 40px 0;
+  width: 100%;
+  flex-wrap: nowrap;
 }
 
 .timeline-item {
@@ -12,16 +15,18 @@
   position: relative;
 }
 
+/* Style for circles */
 .timeline-circle {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: silver;  /* Warna lingkaran silver */
+  background-color: silver;  /* Silver color for the circle */
   margin: 0 auto;
   position: relative;
-  z-index: 2; /* Agar lingkaran berada di atas garis */
+  z-index: 2; /* Keep the circle above the line */
 }
 
+/* Text below each circle */
 .timeline-time {
   display: block;
   margin-top: 10px;
@@ -29,25 +34,26 @@
   color: #555;
 }
 
-/* Garis penghubung timeline */
-.timeline:before {
+/* The line connecting the circles */
+.timeline::before {
   content: '';
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background-color: #ccc;
-  transform: translateX(-50%);
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;  /* Color of the connecting line */
   z-index: 1;
+  transform: translateY(-50%);
 }
 
-/* Tidak ada garis penghubung di item pertama */
+/* Remove the line before the first circle */
 .timeline-item:nth-child(1):after {
   content: none;
 }
 
-/* Garis penghubung antara item 2, 3, dan 4 */
+/* Add lines between circle 2-4 */
 .timeline-item:nth-child(2):after,
 .timeline-item:nth-child(3):after,
 .timeline-item:nth-child(4):after {
@@ -57,17 +63,13 @@
   left: 100%;
   width: 30px;
   height: 2px;
-  background-color: #ccc;  /* Warna garis penghubung */
+  background-color: #ccc;  /* Connecting line color */
+  transform: translateY(-50%);
 }
 
-/* Lingkaran item ke-5 */
-.timeline-item:nth-child(5) .timeline-circle {
-  background-color: green;  /* Warna lingkaran terakhir (full) hijau */
-}
-
-/* Tidak ada garis setelah item ke-5 */
+/* No connecting line after the 5th circle */
 .timeline-item:nth-child(5):after {
-  content: none;  /* Tidak ada garis setelah item 5 */
+  content: none;
 }
 
 </style>
@@ -193,27 +195,31 @@
                             <div class="col-md-12">
                               <!-- The timeline -->
                               <div class="timeline">
-                                <!-- Timeline item 1 -->
+                                <!-- Timeline item 1 (without line) -->
                                 <div class="timeline-item">
                                   <div class="timeline-circle"></div>
                                   <span class="timeline-time">3 Jan. 2023</span>
                                 </div>
+
                                 <!-- Timeline item 2 -->
                                 <div class="timeline-item">
                                   <div class="timeline-circle"></div>
                                   <span class="timeline-time">4 Jan. 2023</span>
                                 </div>
+
                                 <!-- Timeline item 3 -->
                                 <div class="timeline-item">
                                   <div class="timeline-circle"></div>
                                   <span class="timeline-time">5 Jan. 2023</span>
                                 </div>
+
                                 <!-- Timeline item 4 -->
                                 <div class="timeline-item">
                                   <div class="timeline-circle"></div>
                                   <span class="timeline-time">6 Jan. 2023</span>
                                 </div>
-                                <!-- Timeline item 5 -->
+
+                                <!-- Timeline item 5 (without line) -->
                                 <div class="timeline-item">
                                   <div class="timeline-circle"></div>
                                   <span class="timeline-time">7 Jan. 2023</span>
