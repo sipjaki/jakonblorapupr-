@@ -1,40 +1,47 @@
 <style>
 /* Timeline container */
+/* Container for the timeline */
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Timeline container */
 .timeline {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   position: relative;
-  padding: 40px 0;
-  width: 100%;
-  flex-wrap: nowrap;
+  width: 80%;
 }
 
+/* Timeline item (circle and label) */
 .timeline-item {
   text-align: center;
   position: relative;
+  flex: 1;
 }
 
-/* Style for circles */
+/* Circle style */
 .timeline-circle {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: silver;  /* Silver color for the circle */
+  background-color: #ddd;
   margin: 0 auto;
-  position: relative;
-  z-index: 2; /* Keep the circle above the line */
+  transition: background-color 0.3s ease;
+  z-index: 2;
 }
 
-/* Text below each circle */
-.timeline-time {
-  display: block;
+/* Label style */
+.timeline-label {
   margin-top: 10px;
-  font-size: 12px;
-  color: #555;
+  font-size: 14px;
+  color: #333;
 }
 
-/* The line connecting the circles */
+/* Connecting line between circles */
 .timeline::before {
   content: '';
   position: absolute;
@@ -43,32 +50,55 @@
   right: 0;
   width: 100%;
   height: 2px;
-  background-color: #ccc;  /* Color of the connecting line */
+  background-color: #ccc;
   z-index: 1;
   transform: translateY(-50%);
 }
 
-/* Remove the line before the first circle */
-.timeline-item:nth-child(1):after {
-  content: none;
+/* Active circle style */
+.timeline-item.active .timeline-circle {
+  background-color: green;
 }
 
-/* Add lines between circle 2-4 */
-.timeline-item:nth-child(2):after,
-.timeline-item:nth-child(3):after,
-.timeline-item:nth-child(4):after {
+/* Line between the circles */
+.timeline-item:not(:last-child):after {
   content: '';
   position: absolute;
   top: 50%;
   left: 100%;
-  width: 30px;
+  width: 50px;
   height: 2px;
-  background-color: #ccc;  /* Connecting line color */
+  background-color: #ccc;
   transform: translateY(-50%);
 }
 
-/* No connecting line after the 5th circle */
-.timeline-item:nth-child(5):after {
+/* Active line style */
+.timeline-item.active:after {
+  background-color: green;
+}
+
+/* Adding specific color for completed or active items */
+.timeline-item.active .timeline-circle {
+  background-color: green;
+}
+
+.timeline-item:nth-child(2).active .timeline-circle {
+  background-color: green;
+}
+
+.timeline-item:nth-child(3).active .timeline-circle {
+  background-color: green;
+}
+
+.timeline-item:nth-child(4).active .timeline-circle {
+  background-color: green;
+}
+
+/* Remove the line before the first circle and after the last one */
+.timeline-item:first-child:after {
+  content: none;
+}
+.timeline-item:last-child:after {
   content: none;
 }
 
@@ -187,50 +217,39 @@
 
                     </div>
 
-                    <div class="app-content">
-                        <!--begin::Container-->
-                        <div class="container-fluid">
-                          <!-- Timeline example -->
-                          <div class="row">
-                            <div class="col-md-12">
-                              <!-- The timeline -->
-                              <div class="timeline">
-                                <!-- Timeline item 1 (without line) -->
-                                <div class="timeline-item">
-                                  <div class="timeline-circle"></div>
-                                  <span class="timeline-time">3 Jan. 2023</span>
-                                </div>
-
-                                <!-- Timeline item 2 -->
-                                <div class="timeline-item">
-                                  <div class="timeline-circle"></div>
-                                  <span class="timeline-time">4 Jan. 2023</span>
-                                </div>
-
-                                <!-- Timeline item 3 -->
-                                <div class="timeline-item">
-                                  <div class="timeline-circle"></div>
-                                  <span class="timeline-time">5 Jan. 2023</span>
-                                </div>
-
-                                <!-- Timeline item 4 -->
-                                <div class="timeline-item">
-                                  <div class="timeline-circle"></div>
-                                  <span class="timeline-time">6 Jan. 2023</span>
-                                </div>
-
-                                <!-- Timeline item 5 (without line) -->
-                                <div class="timeline-item">
-                                  <div class="timeline-circle"></div>
-                                  <span class="timeline-time">7 Jan. 2023</span>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- /.col -->
+                    <div class="timeline-container">
+                        <!-- Timeline -->
+                        <div class="timeline">
+                          <!-- Timeline item 1 -->
+                          <div class="timeline-item active">
+                            <div class="timeline-circle"></div>
+                            <div class="timeline-label">Step 1</div>
                           </div>
-                          <!-- /.row -->
+
+                          <!-- Timeline item 2 -->
+                          <div class="timeline-item">
+                            <div class="timeline-circle"></div>
+                            <div class="timeline-label">Step 2</div>
+                          </div>
+
+                          <!-- Timeline item 3 -->
+                          <div class="timeline-item">
+                            <div class="timeline-circle"></div>
+                            <div class="timeline-label">Step 3</div>
+                          </div>
+
+                          <!-- Timeline item 4 -->
+                          <div class="timeline-item">
+                            <div class="timeline-circle"></div>
+                            <div class="timeline-label">Step 4</div>
+                          </div>
+
+                          <!-- Timeline item 5 -->
+                          <div class="timeline-item">
+                            <div class="timeline-circle"></div>
+                            <div class="timeline-label">Step 5</div>
+                          </div>
                         </div>
-                        <!--end::Container-->
                       </div>
 
                     <div class="col-md-12">
