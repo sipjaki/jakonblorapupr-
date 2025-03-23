@@ -1,115 +1,93 @@
 <style>
 /* Container for the timeline */
-
-.timeline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
+/* Container for the timeline */
 .timeline-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.circle {
-    width: 40px;
-    height: 40px;
-    background-color: #4CAF50;
-    border-radius: 50%;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
-    transition: all 0.3s ease;
+/* Timeline container */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 80%;
+  align-items: center;
 }
 
-.line {
-    height: 5px;
-    flex-grow: 1;
-    background-color: #ff5722;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 0 15px rgba(255, 87, 34, 0.8);
-    transition: all 0.3s ease;
+/* Timeline item (circle and label) */
+.timeline-item {
+  text-align: center;
+  position: relative;
+  flex: 1;
 }
 
-.line.active {
-    background-color: #ff9800; /* Garis menyala dengan warna oranye */
-    box-shadow: 0 0 20px rgba(255, 152, 0, 0.9);
+/* Circle style */
+.timeline-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+  z-index: 2;
 }
 
-.line:before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #ff5722;
-    box-shadow: 0 0 10px rgba(255, 87, 34, 0.9);
+/* Label style */
+.timeline-label {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
 }
 
-/* Pengaturan jarak dan urutan */
-.circle:first-child {
-    margin-left: 0;
+/* Connecting line between circles */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 6px; /* Lebarkan garis penghubung */
+  background-color: #ddd;
+  z-index: 1;
+  transform: translateY(-50%);
+  border-radius: 10px; /* Membuat garis lebih elegan */
 }
 
-.circle:nth-child(2) {
-    margin-left: 10px;
+/* Active circle style */
+.timeline-item.active .timeline-circle {
+  background-color: green;
 }
 
-.circle:nth-child(4) {
-    margin-left: 10px;
+/* Line between the circles */
+.timeline-item:not(:last-child):after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 50px;
+  height: 6px; /* Lebarkan garis penghubung */
+  background-color: #ddd;
+  transform: translateY(-50%);
+  border-radius: 10px; /* Membuat garis lebih elegan */
 }
 
-.circle:nth-child(6) {
-    margin-left: 10px;
+/* Active line style */
+.timeline-item.active:after {
+  background-color: green;
 }
 
-.circle:nth-child(8) {
-    margin-left: 10px;
+/* Remove the line before the first circle and after the last one */
+.timeline-item:first-child:after {
+  content: none;
+}
+.timeline-item:last-child:after {
+  content: none;
 }
 
-.timeline-container > .circle {
-    z-index: 3;
-}
-JavaScript (script.js):
-javascript
-Copy
-document.addEventListener('DOMContentLoaded', function() {
-    // Ambil semua elemen garis
-    const lines = document.querySelectorAll('.line');
-
-    // Fungsi untuk menambahkan kelas active pada garis tertentu
-    function activateLine(index) {
-        lines[index].classList.add('active');
-    }
-
-    // Simulasi keluaran data atau event yang mengaktifkan garis
-    setTimeout(function() {
-        activateLine(0); // Mengaktifkan garis pertama (line-1)
-    }, 1000);
-
-    setTimeout(function() {
-        activateLine(2); // Mengaktifkan garis kedua (line-2)
-    }, 2000);
-
-    setTimeout(function() {
-        activateLine(4); // Mengaktifkan garis ketiga (line-3)
-    }, 3000);
-
-    setTimeout(function() {
-        activateLine(6); // Mengaktifkan garis keempat (line-4)
-    }, 4000);
-
-    setTimeout(function() {
-        activateLine(8); // Mengaktifkan garis kelima (line-5)
-    }, 5000);
-});
 
 </style>
 
@@ -225,16 +203,30 @@ document.addEventListener('DOMContentLoaded', function() {
                         </script>
 
                     </div>
+
                     <div class="timeline-container">
-                        <div class="circle" id="circle-1"></div>
-                        <div class="line" id="line-1"></div>
-                        <div class="circle" id="circle-2"></div>
-                        <div class="line" id="line-2"></div>
-                        <div class="circle" id="circle-3"></div>
-                        <div class="line" id="line-3"></div>
-                        <div class="circle" id="circle-4"></div>
-                        <div class="line" id="line-4"></div>
-                        <div class="circle" id="circle-5"></div>
+                        <div class="timeline">
+                            <div class="timeline-item" id="item-1">
+                                <div class="timeline-circle"></div>
+                                <div class="timeline-label">Step 1</div>
+                            </div>
+                            <div class="timeline-item" id="item-2">
+                                <div class="timeline-circle"></div>
+                                <div class="timeline-label">Step 2</div>
+                            </div>
+                            <div class="timeline-item" id="item-3">
+                                <div class="timeline-circle"></div>
+                                <div class="timeline-label">Step 3</div>
+                            </div>
+                            <div class="timeline-item" id="item-4">
+                                <div class="timeline-circle"></div>
+                                <div class="timeline-label">Step 4</div>
+                            </div>
+                            <div class="timeline-item" id="item-5">
+                                <div class="timeline-circle"></div>
+                                <div class="timeline-label">Step 5</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
