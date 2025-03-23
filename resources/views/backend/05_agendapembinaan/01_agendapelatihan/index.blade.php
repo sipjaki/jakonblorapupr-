@@ -286,6 +286,7 @@
                 <p>PDF cannot be displayed.</p>
             </object>
         </td>
+
          <td style="text-align: center; vertical-align: middle; width: 100%; align-items:center; gap:10px; margin:left:25px;">
             <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->namakegiatan) }}" style="text-decoration: none;">
             <button

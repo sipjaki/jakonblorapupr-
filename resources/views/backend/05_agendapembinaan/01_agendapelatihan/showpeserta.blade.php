@@ -63,7 +63,7 @@
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                    <a href="/bebujkkonstruksi">
+                    <a href="/beagendapelatihan">
                          <button
                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                          onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -93,15 +93,14 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 10px; text-align:center;">No</th>
-                                        <th style="width: 300px; text-align:center;">Nama Pengurus</th>
-                                        <th style="width: 300px; text-align:center;">Sub Klasifikasi Layanan</th>
-                                        <th style="width: 100px; text-align:center;">Kode</th>
-                                        <th style="width: 200px; text-align:center;">Kualifikasi</th>
-                                        <th style="width: 200px; text-align:center;">Penerbit</th>
-                                        <th style="width: 100px; text-align:center;">Tanggal Terbit</th>
-                                        <th style="width: 100px; text-align:center;">Masa Berlaku</th>
-                                        <th style="width: 200px; text-align:center;">Nama PSJK</th>
-                                        <th style="width: 300px; text-align:center;">Sub Klasifikasi Badan Usaha</th>
+                                        <th style="width: 300px; text-align:center;">Nama Lengkap</th>
+                                        <th style="width: 300px; text-align:center;">Jenjang Pendidikan</th>
+                                        <th style="width: 100px; text-align:center;">Nik</th>
+                                        <th style="width: 200px; text-align:center;">Tanggal Lahir</th>
+                                        <th style="width: 200px; text-align:center;">No Telepon </th>
+                                        <th style="width: 100px; text-align:center;">Instansi</th>
+                                        <th style="width: 100px; text-align:center;">Sertifikat</th>
+                                        <th style="width: 200px; text-align:center;">Verifikasi</th>
                                         <th style="width: 200px; text-align: center;">Aksi</th>
                                     </tr>
                                 </thead>
