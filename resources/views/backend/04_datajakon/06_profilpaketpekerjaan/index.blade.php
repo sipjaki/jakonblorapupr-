@@ -226,7 +226,7 @@
      <tr class="align-middle">
          <td style="text-align: center;">{{$loop->iteration }}</td>
          <td style="text-align: left;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
-         <td style="text-align: left;">{{$item->namapekerjaan}}</td>
+         <td style="text-align: left;">{{ ucfirst(strtolower($item->namapekerjaan)) }}</td>
          <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
          <td style="text-align: center;">{{$item->sumberdana->sumberdana}}</td>
          <td style="text-align: center;">{{$item->tahunpilihan->tahunpilihan}}</td>
