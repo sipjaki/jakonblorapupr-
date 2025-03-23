@@ -1,6 +1,4 @@
 <style>
-/* Timeline container */
-/* Container for the timeline */
 /* Container for the timeline */
 .timeline-container {
   display: flex;
@@ -63,47 +61,39 @@
   background-color: green;
 }
 
+/* Remove line before the first circle and after the last one */
+.timeline-item:first-child:before {
+  content: none;
+}
+.timeline-item:last-child:after {
+  content: none;
+}
+
 /* Line between the circles */
-.timeline-item:not(:last-child):after {
+.timeline-item:not(:last-child)::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 100%;
   width: 50px;
-  height: 6px; /* Lebarkan garis penghubung */
+  height: 6px;
   background-color: #ddd;
   transform: translateY(-50%);
-  border-radius: 10px; /* Membuat garis lebih elegan */
+  border-radius: 10px;
 }
 
 /* Active line style */
-.timeline-item.active:after {
+.timeline-item.active::after {
   background-color: green;
 }
 
-/* Adding specific color for completed or active items */
-.timeline-item.active .timeline-circle {
-  background-color: green;
+/* Styling for the first and last item */
+.timeline-item:first-child::after {
+  content: none; /* Don't display any line before the first circle */
 }
 
-.timeline-item:nth-child(2).active .timeline-circle {
-  background-color: green;
-}
-
-.timeline-item:nth-child(3).active .timeline-circle {
-  background-color: green;
-}
-
-.timeline-item:nth-child(4).active .timeline-circle {
-  background-color: green;
-}
-
-/* Remove the line before the first circle and after the last one */
-.timeline-item:first-child:after {
-  content: none;
-}
-.timeline-item:last-child:after {
-  content: none;
+.timeline-item:last-child::after {
+  content: none; /* Don't display any line after the last circle */
 }
 
 </style>
@@ -220,40 +210,30 @@
                         </script>
 
                     </div>
-
                     <div class="timeline-container">
-                        <!-- Timeline -->
                         <div class="timeline">
-                          <!-- Timeline item 1 -->
                           <div class="timeline-item active">
                             <div class="timeline-circle"></div>
                             <div class="timeline-label">Step 1</div>
                           </div>
-
-                          <!-- Timeline item 2 -->
-                          <div class="timeline-item">
+                          <div class="timeline-item active">
                             <div class="timeline-circle"></div>
                             <div class="timeline-label">Step 2</div>
                           </div>
-
-                          <!-- Timeline item 3 -->
-                          <div class="timeline-item">
+                          <div class="timeline-item active">
                             <div class="timeline-circle"></div>
                             <div class="timeline-label">Step 3</div>
                           </div>
-
-                          <!-- Timeline item 4 -->
-                          <div class="timeline-item">
+                          <div class="timeline-item active">
                             <div class="timeline-circle"></div>
                             <div class="timeline-label">Step 4</div>
                           </div>
-
-                          <!-- Timeline item 5 -->
-                          <div class="timeline-item">
+                          <div class="timeline-item active">
                             <div class="timeline-circle"></div>
                             <div class="timeline-label">Step 5</div>
                           </div>
                         </div>
+                      </div>
                       </div>
 
                     <div class="col-md-12">
