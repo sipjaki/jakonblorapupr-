@@ -43,8 +43,12 @@
   z-index: 1;
 }
 
-/* Hanya menghubungkan titik 1 sampai 4 */
-.timeline-item:nth-child(1):after,
+/* Tidak ada garis penghubung di item pertama */
+.timeline-item:nth-child(1):after {
+  content: none;
+}
+
+/* Garis penghubung antara item 2, 3, dan 4 */
 .timeline-item:nth-child(2):after,
 .timeline-item:nth-child(3):after,
 .timeline-item:nth-child(4):after {
@@ -57,11 +61,12 @@
   background-color: #ccc;  /* Warna garis penghubung */
 }
 
+/* Lingkaran item ke-5 */
 .timeline-item:nth-child(5) .timeline-circle {
   background-color: green;  /* Warna lingkaran terakhir (full) hijau */
 }
 
-/* Membatasi garis penghubung pada item ke-5 */
+/* Tidak ada garis setelah item ke-5 */
 .timeline-item:nth-child(5):after {
   content: none;  /* Tidak ada garis setelah item 5 */
 }
