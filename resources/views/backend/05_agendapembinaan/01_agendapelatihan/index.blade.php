@@ -279,7 +279,7 @@
          <td style="text-align: left;">{{$item->keterangan}}</td>
          <td style="text-align: left;">{{$item->isiagenda}}</td>
          <td style="text-align: center;">
-            <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto">
+            <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" width="200">
         </td>
 
          <td style="text-align: left;">{{$item->materi}}</td>
