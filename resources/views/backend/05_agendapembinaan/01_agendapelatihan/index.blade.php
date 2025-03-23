@@ -111,18 +111,6 @@
                             </button>
                         </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Level -->
-                                <i class="fa fa-level-up" style="margin-right: 8px;"></i>
-                                Jenjang
-                            </button>
-                        </a>
-
-
                      </div>
                  </div>
                  <!-- /.card-header -->
