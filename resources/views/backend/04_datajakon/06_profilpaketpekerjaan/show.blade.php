@@ -1,5 +1,6 @@
 <style>
 /* Container for the timeline */
+/* Container for the timeline */
 .timeline-container {
   display: flex;
   justify-content: center;
@@ -10,9 +11,9 @@
 /* Timeline container */
 .timeline {
   display: flex;
-  justify-content: space-between;
   position: relative;
   width: 80%;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -42,10 +43,6 @@
 }
 
 /* Garis penghubung antar lingkaran */
-.timeline-item:not(:last-child) {
-  position: relative;
-}
-
 .timeline-item:not(:last-child)::after {
   content: '';
   position: absolute;
@@ -59,38 +56,33 @@
   z-index: 1; /* Agar garis berada di belakang lingkaran */
 }
 
-/* Active circle style */
-.timeline-item.active .timeline-circle {
-  background-color: green;
-}
-
-/* Active line style */
-.timeline-item.active::after {
-  background-color: green;
-}
-
-/* Main line connecting all circles (garis horizontal utama) */
+/* Garis penghubung utama (horizontal) */
 .timeline::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
-  height: 6px; /* Lebarkan garis penghubung */
+  height: 6px;
   background-color: #ddd;
-  z-index: 0; /* Agar garis berada di bawah lingkaran */
+  z-index: 0;
   transform: translateY(-50%);
-  border-radius: 10px; /* Membuat garis lebih elegan */
+  border-radius: 10px;
 }
 
-/* Active main line */
-.timeline.active::before {
+/* Active state (lingkaran dan garis berubah menjadi hijau) */
+.timeline-item.active .timeline-circle {
   background-color: green;
 }
 
-/* Remove the line before the first circle and after the last one */
-.timeline-item:first-child::after {
-  content: none; /* Tidak ada garis penghubung untuk yang pertama */
+/* Garis penghubung yang aktif */
+.timeline-item.active::after {
+  background-color: green;
+}
+
+/* Garis penghubung utama yang aktif */
+.timeline.active::before {
+  background-color: green;
 }
 
 
@@ -208,46 +200,28 @@
                         </script>
 
                     </div>
+
                     <div class="timeline-container">
                         <div class="timeline">
-                            <!-- Item Persiapan -->
-                            <div class="timeline-item" id="item-1"
-                                @if($data->prosespaket->persiapan === 'SELESAI') class="active" @endif>
+                            <div class="timeline-item" id="item-1" class="{{ $data->prosespaket->persiapan === 'SELESAI' ? 'active' : '' }}">
                                 <div class="timeline-circle"></div>
                                 <div class="timeline-label">Persiapan</div>
-                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->persiapan}}</div> <!-- Data disembunyikan -->
                             </div>
-
-                            <!-- Item Pengadaan -->
-                            <div class="timeline-item" id="item-2"
-                                @if($data->prosespaket->pengadaan === 'SELESAI') class="active" @endif>
+                            <div class="timeline-item" id="item-2" class="{{ $data->prosespaket->pengadaan === 'SELESAI' ? 'active' : '' }}">
                                 <div class="timeline-circle"></div>
                                 <div class="timeline-label">Pengadaan</div>
-                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->pengadaan}}</div> <!-- Data disembunyikan -->
                             </div>
-
-                            <!-- Item Pelaksanaan -->
-                            <div class="timeline-item" id="item-3"
-                                @if($data->prosespaket->pelaksanaan === 'SELESAI') class="active" @endif>
+                            <div class="timeline-item" id="item-3" class="{{ $data->prosespaket->pelaksanaan === 'SELESAI' ? 'active' : '' }}">
                                 <div class="timeline-circle"></div>
                                 <div class="timeline-label">Pelaksanaan</div>
-                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->pelaksanaan}}</div> <!-- Data disembunyikan -->
                             </div>
-
-                            <!-- Item Pemeliharaan -->
-                            <div class="timeline-item" id="item-4"
-                                @if($data->prosespaket->pemeliharaan === 'SELESAI') class="active" @endif>
+                            <div class="timeline-item" id="item-4" class="{{ $data->prosespaket->pemeliharaan === 'SELESAI' ? 'active' : '' }}">
                                 <div class="timeline-circle"></div>
                                 <div class="timeline-label">Pemeliharaan</div>
-                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->pemeliharaan}}</div> <!-- Data disembunyikan -->
                             </div>
-
-                            <!-- Item Paket Selesai -->
-                            <div class="timeline-item" id="item-5"
-                                @if($data->prosespaket->paketselesai === 'SELESAI') class="active" @endif>
+                            <div class="timeline-item" id="item-5" class="{{ $data->prosespaket->paketselesai === 'SELESAI' ? 'active' : '' }}">
                                 <div class="timeline-circle"></div>
                                 <div class="timeline-label">Paket Selesai</div>
-                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->paketselesai}}</div> <!-- Data disembunyikan -->
                             </div>
                         </div>
                     </div>
