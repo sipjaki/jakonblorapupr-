@@ -219,13 +219,13 @@
                                                     <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Progress
                                                 </label>
 
-                                                <!-- Teks persentase di atas progress bar -->
-                                                <div style="text-align: center; font-weight: bold; color: black;">
-                                                    {{$data->progress}}%
-                                                </div>
-
                                                 <!-- Progress bar -->
                                                 <div style="width: 100%; background-color: #ddd; border-radius: 10px; height: 20px; position: relative;">
+                                                    <!-- Teks persentase yang ditimpa di atas progress bar -->
+                                                    <div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; color: black; font-weight: bold;">
+                                                        {{$data->progress}}%
+                                                    </div>
+                                                    <!-- Progress bar yang berubah warna berdasarkan persentase -->
                                                     <div
                                                         style="width: {{$data->progress}}%;
                                                                background-color:
@@ -244,10 +244,6 @@
                                                                border-radius: 10px;">
                                                     </div>
                                                 </div>
-
-                                                <!-- Input with readonly to show the value -->
-                                                <input class="form-control mt-2" value="{{$data->progress}}%" readonly/>
-                                            </div>
 
                                                 <!-- Input with readonly to show the value -->
                                                 <input class="form-control mt-2" value="{{$data->progress}}%" readonly/>
