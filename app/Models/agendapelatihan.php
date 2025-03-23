@@ -24,5 +24,10 @@ class agendapelatihan extends Model
         return $this->belongsTo(pesertapelatihan::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(user::class);
+    }
+
 
 }

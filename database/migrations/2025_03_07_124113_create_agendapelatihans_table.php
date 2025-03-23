@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('kategoripelatihan_id')->nullable();
             $table->foreignId('pesertapelatihan_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             // $table->foreignId('jenjang_id')->nullable();
             $table->string('namakegiatan')->nullable();
             $table->string('penyelenggara')->nullable();

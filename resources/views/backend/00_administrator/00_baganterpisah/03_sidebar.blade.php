@@ -291,7 +291,7 @@
                 <ul class="nav nav-treeview">
                   <!-- Agenda Pelatihan -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/beagendapelatihan" class="nav-link">
                       <i class="nav-icon bi bi-calendar-event text-warning"></i> <!-- Ikon untuk Agenda Pelatihan -->
                       <p style="color: white">Agenda Pelatihan</p>
                     </a>

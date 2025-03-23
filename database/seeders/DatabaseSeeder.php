@@ -12015,6 +12015,7 @@ kategoripelatihan::create([
 // DATA AGENDA PELATIHAN
 agendapelatihan::create([
     'id' => 1,
+    'user' => 1,
     'kategoripelatihan_id' => '1',
     'namakegiatan' => 'Pelatihan Manajemen Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
