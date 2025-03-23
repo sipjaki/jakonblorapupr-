@@ -22,6 +22,7 @@
   text-align: center;
   position: relative;
   flex: 1;
+  z-index: 1;
 }
 
 /* Circle style */
@@ -42,27 +43,7 @@
   color: #333;
 }
 
-/* Connecting line between circles */
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 6px; /* Lebarkan garis penghubung */
-  background-color: #ddd;
-  z-index: 1;
-  transform: translateY(-50%);
-  border-radius: 10px; /* Membuat garis lebih elegan */
-}
-
-/* Active circle style */
-.timeline-item.active .timeline-circle {
-  background-color: green;
-}
-
-/* Line between the circles */
+/* Connecting line between circles (horizontal) */
 .timeline-item:not(:last-child):after {
   content: '';
   position: absolute;
@@ -72,11 +53,35 @@
   height: 6px; /* Lebarkan garis penghubung */
   background-color: #ddd;
   transform: translateY(-50%);
-  border-radius: 10px; /* Membuat garis lebih elegan */
+  border-radius: 10px;
+}
+
+/* Active circle style */
+.timeline-item.active .timeline-circle {
+  background-color: green;
 }
 
 /* Active line style */
 .timeline-item.active:after {
+  background-color: green;
+}
+
+/* Main line connecting all circles */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 6px; /* Lebarkan garis penghubung */
+  background-color: #ddd;
+  z-index: 1;
+  transform: translateY(-50%);
+  border-radius: 10px; /* Membuat garis lebih elegan */
+}
+
+/* Active main line */
+.timeline.active::before {
   background-color: green;
 }
 
@@ -228,6 +233,40 @@
                             </div>
                         </div>
                     </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+    // Ambil semua item timeline
+    const items = document.querySelectorAll('.timeline-item');
+
+    // Fungsi untuk menambahkan kelas active pada item tertentu
+    function activateItem(index) {
+        items[index].classList.add('active');
+    }
+
+    // Simulasi keluaran data atau event yang mengaktifkan item
+    setTimeout(function() {
+        activateItem(0); // Mengaktifkan item pertama
+    }, 1000);
+
+    setTimeout(function() {
+        activateItem(1); // Mengaktifkan item kedua
+    }, 2000);
+
+    setTimeout(function() {
+        activateItem(2); // Mengaktifkan item ketiga
+    }, 3000);
+
+    setTimeout(function() {
+        activateItem(3); // Mengaktifkan item keempat
+    }, 4000);
+
+    setTimeout(function() {
+        activateItem(4); // Mengaktifkan item kelima
+    }, 5000);
+});
+
+                    </script>
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-6">
