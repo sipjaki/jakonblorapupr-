@@ -416,7 +416,7 @@
                     <a href="/404" class="btn btn-primary">
                         <i class="fas fa-user-plus"></i> Daftar
                     </a>
-                    <a href="/masuk" class="btn btn-primary">
+                    <a href="/login" class="btn btn-primary">
                         <i class="fas fa-sign-in-alt"></i> Masuk
                     </a>
                 </div>
