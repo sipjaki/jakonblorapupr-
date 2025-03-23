@@ -213,20 +213,19 @@
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 400px; text-align:center;">Nama Lengkap</th>
-         <th style="width: 400px; text-align:center;">Alamat </th>
-         <th style="width: 100px; text-align:center;">Tahun Lulus</th>
-         <th style="width: 300px; text-align:center;">Asosiasi</th>
-         <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
-         <th style="width: 100px; text-align:center;">Pendidikan</th>
-         <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
-         <th style="width: 100px; text-align:center;">Jenjang</th>
-         <th style="width: 400px; text-align:center;">LPS Penerbit</th>
-         <th style="width: 200px; text-align:center;">Jurusan</th>
-         <th style="width: 200px; text-align:center;">Tanggal Terbit</th>
-         <th style="width: 200px; text-align:center;">Tanggal Habis</th>
-         <th style="width: 200px; text-align:center;">Masa Berlaku</th>
-         <th style="width: 200px; text-align:center;">Status Terbit</th>
+         <th style="width: 400px; text-align:center;">Kategori Pelatihan</th>
+         <th style="width: 400px; text-align:center;">Nama Kegiatan </th>
+         <th style="width: 100px; text-align:center;">Penyelenggara</th>
+         <th style="width: 400px; text-align:center;">Waktu Peleksanaan</th>
+         <th style="width: 300px; text-align:center;">Penutupan</th>
+         <th style="width: 100px; text-align:center;">Status</th>
+         <th style="width: 100px; text-align:center;">Jumlah Peserta</th>
+         <th style="width: 400px; text-align:center;">Lokasi</th>
+         <th style="width: 100px; text-align:center;">Keterangan</th>
+         <th style="width: 100px; text-align:center;">Isi Agenda</th>
+         <th style="width: 100px; text-align:center;">Foto</th>
+         <th style="width: 100px; text-align:center;">Materi</th>
+         <th style="width: 100px; text-align:center;">Peserta</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
@@ -234,9 +233,9 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->nama}}</td>
-         <td style="text-align: left;">{{$item->alamat}}</td>
-         <td style="text-align: center;">{{$item->tahunlulus}}</td>
+         <td style="text-align: left;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
+         <td style="text-align: left;">{{$item->namakegiatan}}</td>
+         <td style="text-align: center;">{{$item->penyelenggara}}</td>
          <td style="text-align: center;">
             @if($item->asosiasimasjaki)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
@@ -244,30 +243,26 @@
                 <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
             @endif
         </td>
-        <td style="text-align: left;">{{$item->namasekolah->namasekolah}}</td>
-         <td style="text-align: center;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-         <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
-         <td style="text-align: center;">{{$item->jenjang->jenjang}}</td>
-         <td style="text-align: left;">{{$item->lpspenerbit->lpspenerbit}}</td>
-         <td style="text-align: left;">{{$item->jurusan->jurusan}}</td>
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalterbit)->translatedFormat('l, d F Y') }}</td>
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalhabis)->translatedFormat('l, d F Y') }}</td>
+        {{-- <td style="text-align: left;">{{$item->penutupan}}</td> --}}
+        <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('l, d F Y') }}</td>
+        <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('l, d F Y') }}</td>
+        {{-- <td style="text-align: center;">{{$item->waktupelaksanaan}}</td> --}}
 
-         <td style="text-align: center;">
+        <td style="text-align: center;">
             <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
         </td>
 
         <script>
             function updateStatus() {
                 let now = new Date().getTime();
-                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->tanggalhabis)->format('Y-m-d H:i:s') }}").getTime();
+                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->penutupan)->format('Y-m-d H:i:s') }}").getTime();
                 let statusButton = document.getElementById("status-{{ $item->id }}");
 
                 if (now > tanggalHabis) {
-                    statusButton.innerText = "TIDAK BERLAKU";
+                    statusButton.innerText = "DITUTUP";
                     statusButton.className = "btn btn-danger btn-sm";
                 } else {
-                    statusButton.innerText = "BERLAKU";
+                    statusButton.innerText = "DIBUKA";
                     statusButton.className = "btn btn-success btn-sm";
                 }
             }
@@ -279,10 +274,30 @@
             setInterval(updateStatus, 1000);
         </script>
 
-         <td style="text-align: center;">{{$item->statusterbit}}</td>
+        <td style="text-align: left;">{{$item->jumlahpeserta}}</td>
+         <td style="text-align: center;">{{$item->lokasi}}</td>
+         <td style="text-align: left;">{{$item->keterangan}}</td>
+         <td style="text-align: left;">{{$item->isiagenda}}</td>
+         <td style="text-align: left;">{{$item->foto}}</td>
+         <td style="text-align: left;">{{$item->materi}}</td>
+
+         <td style="text-align: center; vertical-align: middle; width: 100%; align-items:center;">
+            <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->id) }}" style="text-decoration: none;">
+            <button
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='	#6B7280'; this.style.color='white';"
+                style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                       border-radius: 15px; font-size: 14px; cursor: pointer;
+                       display: flex; align-items: center; justify-content: center;
+                       transition: background-color 0.3s, color 0.3s;">
+                Lihat
+            </button>
+        </a>
+    </td>
+
 
          <td style="text-align: center; vertical-align: middle;">
-             <a href="/beskkallblora/show/{{$item->nama}}" class="btn btn-sm btn-info me-2" title="Show">
+             <a href="/beagendapelatihan/show/{{$item->namakegiatan}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a>
              <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
@@ -290,7 +305,7 @@
              </a>
              <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
-                   data-judul="{{ $item->nama }}"
+                   data-judul="{{ $item->namakegiatan }}"
                    onclick="setDeleteUrl(this)">
                     <i class="bi bi-trash"></i>
             </a>
@@ -335,9 +350,9 @@
 
                  <script>
                  function setDeleteUrl(button) {
-                     var nama = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = nama;
-                     var deleteUrl = "/beskkallblora/delete/" + encodeURIComponent(nama);
+                     var namakegiatan = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = namakegiatan;
+                     var deleteUrl = "/beskkallblora/delete/" + encodeURIComponent(namakegiatan);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

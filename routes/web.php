@@ -536,6 +536,7 @@ Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [Paketpekerjaanmasjaki
 // ---------------------- MENU 01 AGENDA PELATIHAN   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beagendapelatihan', [PembinaanController::class, 'beagendapelatihan'])->middleware('auth');
+Route::get('/beagendapelatihanpeserta/show/{id}', [PaketpekerjaanmasjakiController::class, 'beagendapelatihanshowpeserta'])->middleware('auth');
 Route::get('/beagendapelatihan/show/{namakegiatan}', [PaketpekerjaanmasjakiController::class, 'beagendapelatihanshow'])->middleware('auth');
 Route::delete('/beagendapelatihan/delete/{namakegiatan}', [PaketpekerjaanmasjakiController::class, 'beagendapelatihandelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________

@@ -20,8 +20,8 @@ return new class extends Migration
             // -------------------------------------------------------------------------
             $table->string('namakegiatan')->nullable();
             $table->string('penyelenggara')->nullable();
-            $table->string('penutupan')->nullable();
-            $table->string('waktupelaksanaan')->nullable();
+            $table->date('penutupan')->nullable();
+            $table->date('waktupelaksanaan')->nullable();
             $table->integer('jumlahpeserta')->nullable();
             $table->string('lokasi')->nullable();
             $table->string('keterangan')->nullable();
