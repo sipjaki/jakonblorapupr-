@@ -166,16 +166,18 @@
                                                 </label>
                                                 <input class="form-control" value="{{$data->cvptpenyedia}}" readonly/>
                                             </div>
-                                        </div>
-                                        <!-- End Left Column -->
-                                        <!-- Right Column (6/12) -->
-                                        <div class="col-md-6">
+
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-award-fill" style="margin-right: 8px; color: navy;"></i>Jenjang
                                                 </label>
                                                 <input class="form-control" value="{{$data->nib}}" readonly/>
                                             </div>
+
+                                        </div>
+                                        <!-- End Left Column -->
+                                        <!-- Right Column (6/12) -->
+                                        <div class="col-md-6">
 
                                             <div class="mb-3">
                                                 <label class="form-label">
@@ -214,10 +216,37 @@
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Status Terbit
+                                                    <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Progress
                                                 </label>
-                                                <input class="form-control" value="{{$data->progress}}" readonly/>
+                                                <!-- Progress bar -->
+                                                <div style="width: 100%; background-color: #ddd; border-radius: 10px; height: 20px; position: relative;">
+                                                    <div
+                                                        style="width: {{$data->progress}}%;
+                                                               background-color:
+                                                               @if($data->progress < 25)
+                                                                   red;
+                                                               @elseif($data->progress < 50)
+                                                                   orange;
+                                                               @elseif($data->progress < 75)
+                                                                   lightblue;
+                                                               @elseif($data->progress < 100)
+                                                                   lightgreen;
+                                                               @else
+                                                                   green;
+                                                               @endif
+                                                               height: 100%;
+                                                               border-radius: 10px;">
+                                                    </div>
+                                                    <!-- Text inside the progress bar -->
+                                                    <div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;">
+                                                        {{$data->progress}}%
+                                                    </div>
+                                                </div>
+
+                                                <!-- Input with readonly to show the value -->
+                                                <input class="form-control mt-2" value="{{$data->progress}}%" readonly/>
                                             </div>
+
 
                                             <div class="mb-3">
                                                 <label class="form-label">
