@@ -236,13 +236,13 @@
          <td style="text-align: left;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
          <td style="text-align: left;">{{$item->namakegiatan}}</td>
          <td style="text-align: center;">{{$item->penyelenggara}}</td>
-         <td style="text-align: center;">
+         {{-- <td style="text-align: center;">
             @if($item->asosiasimasjaki)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
             @else
                 <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
             @endif
-        </td>
+        </td> --}}
         {{-- <td style="text-align: left;">{{$item->penutupan}}</td> --}}
         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('l, d F Y') }}</td>
         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('l, d F Y') }}</td>
