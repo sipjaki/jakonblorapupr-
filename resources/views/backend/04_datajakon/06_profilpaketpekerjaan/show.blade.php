@@ -53,7 +53,7 @@
                                            border-radius: 5px; font-size: 16px; margin-right: 10px;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000'; this.style.borderColor='#1d643b';"
                                     onmouseout="this.style.backgroundColor='#1d643b'; this.style.color='#ffffff'; this.style.borderColor='#1d643b';">
-                                {{ $data->nama }}
+                                {{ $data->namapekerjaan }}
                             </button>
                         </h2>
                         <button id="status-{{ $data->id }}" class="btn btn-sm"></button>
@@ -61,15 +61,15 @@
                         <script>
                             function updateStatus() {
                                 let now = new Date().getTime();
-                                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($data->tanggalhabis)->format('Y-m-d H:i:s') }}").getTime();
+                                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($data->bulanselesai)->format('Y-m-d H:i:s') }}").getTime();
                                 let statusButton = document.getElementById("status-{{ $data->id }}");
 
                                 // CSS yang digunakan pada tombol
                                 let buttonStyle = "font-weight: bold; padding: 10px 20px; border-radius: 5px; font-size: 16px; margin-right: 10px;";
 
                                 if (now > tanggalHabis) {
-                                    statusButton.innerText = "TIDAK BERLAKU";
-                                    statusButton.setAttribute("style", buttonStyle + " background-color: red; border-color: red; color: white;"); // Set to red for "TIDAK BERLAKU"
+                                    statusButton.innerText = "ON PROGRESS";
+                                    statusButton.setAttribute("style", buttonStyle + " background-color: lighblue; border-color: blue; color: white;"); // Set to red for "TIDAK BERLAKU"
                                     statusButton.className = "btn btn-danger btn-sm"; // Update class for 'danger' status
 
                                     // Hover effect: keep background white on hover
@@ -84,7 +84,7 @@
                                         statusButton.style.borderColor = 'red'; // Keep red border
                                     };
                                 } else {
-                                    statusButton.innerText = "BERLAKU";
+                                    statusButton.innerText = "SELESAI";
                                     statusButton.setAttribute("style", buttonStyle + " background-color: #1d643b; border-color: #1d643b; color: white;");
                                     statusButton.className = "btn btn-success btn-sm"; // Update class for 'success' status
 
@@ -129,42 +129,42 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>Nama Lengkap
                                                 </label>
-                                                <input class="form-control" value="{{$data->nama}}" readonly/>
+                                                <input class="form-control" value="{{$data->namapekerjaan}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i>Alamat
                                                 </label>
-                                                <input class="form-control" value="{{$data->alamat}}" readonly />
+                                                <input class="form-control" value="{{$data->profiljenispekerjaan->jenispekerjaan}}" readonly />
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-check" style="margin-right: 8px; color: navy;"></i>Tahun Lulus
                                                 </label>
-                                                <input class="form-control" value="{{$data->tahunlulus}}" readonly/>
+                                                <input class="form-control" value="{{$data->paketstatuspekerjaan->paketstatuspekerjaan}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-mortarboard-fill" style="margin-right: 8px; color: navy;"></i>Universitas/Sekolah/Instansi
                                                 </label>
-                                                <input class="form-control" value="{{$data->namasekolah->namasekolah}}" readonly/>
+                                                <input class="form-control" value="{{$data->sumberdana->sumberdana}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-award-fill" style="margin-right: 8px; color: navy;"></i>Jenjang Pendidikan
                                                 </label>
-                                                <input class="form-control" value="{{$data->jenjangpendidikan->jenjangpendidikan}}" readonly/>
+                                                <input class="form-control" value="{{$data->tahunpilihan->tahunpilihan}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-briefcase-fill" style="margin-right: 8px; color: navy;"></i>Jabatan Kerja
                                                 </label>
-                                                <input class="form-control" value="{{$data->jabatankerja->jabatankerja}}" readonly/>
+                                                <input class="form-control" value="{{$data->cvptpenyedia}}" readonly/>
                                             </div>
                                         </div>
                                         <!-- End Left Column -->
@@ -174,42 +174,56 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-award-fill" style="margin-right: 8px; color: navy;"></i>Jenjang
                                                 </label>
-                                                <input class="form-control" value="{{$data->jenjang->jenjang}}" readonly/>
+                                                <input class="form-control" value="{{$data->nib}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-building-fill" style="margin-right: 8px; color: navy;"></i>LPS Penerbit
                                                 </label>
-                                                <input class="form-control" value="{{$data->lpspenerbit->lpspenerbit}}" readonly/>
+                                                <input class="form-control" value="{{$data->nilaikontrak}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-book-fill" style="margin-right: 8px; color: navy;"></i>Jurusan
                                                 </label>
-                                                <input class="form-control" value="{{$data->jurusan->jurusan}}" readonly/>
+                                                <input class="form-control" value="{{$data->jeniskontrak}}" readonly/>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label">
+                                                    <i class="bi bi-book-fill" style="margin-right: 8px; color: navy;"></i>Jurusan
+                                                </label>
+                                                <input class="form-control" value="{{$data->karakteristikkontrak}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-check-fill" style="margin-right: 8px; color: navy;"></i>Tanggal Terbit
                                                 </label>
-                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->tanggalterbit)->translatedFormat('d F Y') }}" readonly/>
+                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanmulai)->translatedFormat('d F Y') }}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i>Tanggal Habis
                                                 </label>
-                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->tanggalhabis)->translatedFormat('d F Y') }}" readonly/>
+                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanselesai)->translatedFormat('d F Y') }}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Status Terbit
                                                 </label>
-                                                <input class="form-control" value="{{$data->statusterbit}}" readonly/>
+                                                <input class="form-control" value="{{$data->progress}}" readonly/>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label">
+                                                    <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Status Terbit
+                                                </label>
+                                                <input class="form-control" value="{{$data->dinas}}" readonly/>
                                             </div>
                                         </div>
 
