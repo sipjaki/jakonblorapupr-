@@ -213,18 +213,18 @@
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 400px; text-align:center;">Kategori Pelatihan</th>
-         <th style="width: 400px; text-align:center;">Nama Kegiatan </th>
-         <th style="width: 100px; text-align:center;">Penyelenggara</th>
-         <th style="width: 400px; text-align:center;">Waktu Peleksanaan</th>
-         <th style="width: 300px; text-align:center;">Penutupan</th>
+         <th style="width: 125px; text-align:center;">Kategori Pelatihan</th>
+         <th style="width: 250px; text-align:center;">Nama Kegiatan </th>
+         <th style="width: 300px; text-align:center;">Penyelenggara</th>
+         <th style="width: 100px; text-align:center;">Waktu Peleksanaan</th>
+         <th style="width: 100px; text-align:center;">Penutupan</th>
          <th style="width: 100px; text-align:center;">Status</th>
          <th style="width: 100px; text-align:center;">Jumlah Peserta</th>
-         <th style="width: 400px; text-align:center;">Lokasi</th>
-         <th style="width: 100px; text-align:center;">Keterangan</th>
-         <th style="width: 100px; text-align:center;">Isi Agenda</th>
-         <th style="width: 100px; text-align:center;">Foto</th>
-         <th style="width: 100px; text-align:center;">Materi</th>
+         <th style="width: 250px; text-align:center;">Lokasi</th>
+         <th style="width: 250px; text-align:center;">Keterangan</th>
+         <th style="width: 600px; text-align:center;">Isi Agenda</th>
+         <th style="width: 300px; text-align:center;">Foto</th>
+         <th style="width: 300px; text-align:center;">Materi</th>
          <th style="width: 100px; text-align:center;">Peserta</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
