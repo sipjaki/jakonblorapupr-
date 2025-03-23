@@ -24,10 +24,11 @@ class pesertapelatihan extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-            public function jenjangpendidikan()
-        {
-            return $this->belongsTo(jenjangpendidikan::class, 'jenjangpendidikan_id'); // Sesuaikan nama foreign key
-        }
+    public function jenjangpendidikan()
+    {
+        return $this->belongsTo(jenjangpendidikan::class, 'jenjangpendidikan_id');
+    }
+
 
 
 }
