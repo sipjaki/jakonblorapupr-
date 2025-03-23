@@ -294,7 +294,7 @@
                 style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
                        border-radius: 15px; font-size: 14px; cursor: pointer;
                        display: flex; align-items: center; justify-content: center;
-                       transition: background-color 0.3s, color 0.3s;">
+                       transition: background-color 0.3s, color 0.3s; gap:10px;">
                 Lihat
             </button>
         </a>
