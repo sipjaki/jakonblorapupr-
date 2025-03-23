@@ -39,4 +39,5 @@ class jenjangpendidikan extends Model
     }
 
 
+
 }

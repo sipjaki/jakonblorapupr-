@@ -26,9 +26,8 @@ class pesertapelatihan extends Model
 
     public function jenjangpendidikan()
     {
-        return $this->belongsTo(jenjangpendidikan::class, 'jenjangpendidikan_id');
+        return $this->belongsTo(jenjangpendidikan::class);
     }
-
 
 
 }
