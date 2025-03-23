@@ -1,100 +1,54 @@
 <style>
 /* Container for the timeline */
-.timeline-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
 
-/* Timeline container */
 .timeline {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  width: 80%;
-  align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Timeline item (circle and label) */
-.timeline-item {
-  text-align: center;
-  position: relative;
-  flex: 1;
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
 }
 
-/* Circle style */
-.timeline-circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ddd;
-  margin: 0 auto;
-  transition: background-color 0.3s ease;
-  z-index: 2;
+.line {
+    height: 10px;
+    width: 100px;
+    background-color: #ff5722;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
 }
 
-/* Label style */
-.timeline-label {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #333;
+.line:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    width: 120%;
+    height: 3px;
+    background-color: #ff5722;
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
 }
 
-/* Connecting line between circles */
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 6px; /* Lebarkan garis penghubung */
-  background-color: #ddd;
-  z-index: 1;
-  transform: translateY(-50%);
-  border-radius: 10px; /* Membuat garis lebih elegan */
+.circle:nth-child(1) { margin-left: 0; }
+.circle:nth-child(3) { margin-left: 50px; }
+.circle:nth-child(5) { margin-left: 50px; }
+.circle:nth-child(7) { margin-left: 50px; }
+.circle:nth-child(9) { margin-left: 50px; }
+
+.timeline .line:nth-child(2), .timeline .line:nth-child(4), .timeline .line:nth-child(6), .timeline .line:nth-child(8) {
+    background-color: #ff5722;
 }
 
-/* Active circle style */
-.timeline-item.active .timeline-circle {
-  background-color: green;
-}
-
-/* Remove line before the first circle and after the last one */
-.timeline-item:first-child:before {
-  content: none;
-}
-.timeline-item:last-child:after {
-  content: none;
-}
-
-/* Line between the circles */
-.timeline-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  width: 50px;
-  height: 6px;
-  background-color: #ddd;
-  transform: translateY(-50%);
-  border-radius: 10px;
-}
-
-/* Active line style */
-.timeline-item.active::after {
-  background-color: green;
-}
-
-/* Styling for the first and last item */
-.timeline-item:first-child::after {
-  content: none; /* Don't display any line before the first circle */
-}
-
-.timeline-item:last-child::after {
-  content: none; /* Don't display any line after the last circle */
-}
 
 </style>
 
@@ -210,32 +164,17 @@
                         </script>
 
                     </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                          <div class="timeline-item active">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 1</div>
-                          </div>
-                          <div class="timeline-item active">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 2</div>
-                          </div>
-                          <div class="timeline-item active">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 3</div>
-                          </div>
-                          <div class="timeline-item active">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 4</div>
-                          </div>
-                          <div class="timeline-item active">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 5</div>
-                          </div>
-                        </div>
-                      </div>
-                      </div>
-
+                    <div class="timeline">
+                        <div class="circle" id="circle-1"></div>
+                        <div class="line" id="line-1"></div>
+                        <div class="circle" id="circle-2"></div>
+                        <div class="line" id="line-2"></div>
+                        <div class="circle" id="circle-3"></div>
+                        <div class="line" id="line-3"></div>
+                        <div class="circle" id="circle-4"></div>
+                        <div class="line" id="line-4"></div>
+                        <div class="circle" id="circle-5"></div>
+                    </div>
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-6">
