@@ -278,7 +278,10 @@
          <td style="text-align: center;">{{$item->lokasi}}</td>
          <td style="text-align: left;">{{$item->keterangan}}</td>
          <td style="text-align: left;">{{$item->isiagenda}}</td>
-         <td style="text-align: left;">{{$item->foto}}</td>
+         <td style="text-align: center;">
+            <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto">
+        </td>
+
          <td style="text-align: left;">{{$item->materi}}</td>
 
          <td style="text-align: center; vertical-align: middle; width: 100%; align-items:center;">
