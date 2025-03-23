@@ -1,6 +1,5 @@
 <style>
 /* Container for the timeline */
-/* Container for the timeline */
 .timeline-container {
   display: flex;
   justify-content: center;
@@ -42,8 +41,12 @@
   color: #333;
 }
 
-/* Connecting line between circles (horizontal) */
-.timeline-item:not(:last-child):after {
+/* Garis penghubung antar lingkaran */
+.timeline-item:not(:last-child) {
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -53,6 +56,7 @@
   background-color: #ddd;
   transform: translateY(-50%);
   border-radius: 10px;
+  z-index: 1; /* Agar garis berada di belakang lingkaran */
 }
 
 /* Active circle style */
@@ -61,11 +65,11 @@
 }
 
 /* Active line style */
-.timeline-item.active:after {
+.timeline-item.active::after {
   background-color: green;
 }
 
-/* Main line connecting all circles */
+/* Main line connecting all circles (garis horizontal utama) */
 .timeline::before {
   content: '';
   position: absolute;
@@ -74,7 +78,7 @@
   width: 100%;
   height: 6px; /* Lebarkan garis penghubung */
   background-color: #ddd;
-  z-index: 1;
+  z-index: 0; /* Agar garis berada di bawah lingkaran */
   transform: translateY(-50%);
   border-radius: 10px; /* Membuat garis lebih elegan */
 }
@@ -85,12 +89,8 @@
 }
 
 /* Remove the line before the first circle and after the last one */
-.timeline-item:first-child:after {
+.timeline-item:first-child::after {
   content: none; /* Tidak ada garis penghubung untuk yang pertama */
-}
-
-.timeline-item:last-child:after {
-  content: none; /* Tidak ada garis penghubung untuk yang terakhir */
 }
 
 
