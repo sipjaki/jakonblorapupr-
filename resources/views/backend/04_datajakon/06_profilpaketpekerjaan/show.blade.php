@@ -69,19 +69,19 @@
 
                                 if (now > tanggalHabis) {
                                     statusButton.innerText = "ON PROGRESS";
-                                    statusButton.setAttribute("style", buttonStyle + " background-color: lighblue; border-color: blue; color: white;"); // Set to red for "TIDAK BERLAKU"
-                                    statusButton.className = "btn btn-danger btn-sm"; // Update class for 'danger' status
+                                    statusButton.setAttribute("style", buttonStyle + " background-color: blue; border-color: blue; color: white;"); // Set to red for "TIDAK BERLAKU"
+                                    statusButton.className = "btn btn-primary btn-sm"; // Update class for 'danger' status
 
                                     // Hover effect: keep background white on hover
                                     statusButton.onmouseover = function() {
                                         statusButton.style.backgroundColor = '#ffffff';
                                         statusButton.style.color = '#000000'; // Color becomes black when hovered
-                                        statusButton.style.borderColor = 'red'; // Keep red border
+                                        statusButton.style.borderColor = 'blue'; // Keep red border
                                     };
                                     statusButton.onmouseout = function() {
-                                        statusButton.style.backgroundColor = 'red';
+                                        statusButton.style.backgroundColor = 'blue';
                                         statusButton.style.color = 'white'; // Keep white text when mouse out
-                                        statusButton.style.borderColor = 'red'; // Keep red border
+                                        statusButton.style.borderColor = 'blue'; // Keep red border
                                     };
                                 } else {
                                     statusButton.innerText = "SELESAI";
