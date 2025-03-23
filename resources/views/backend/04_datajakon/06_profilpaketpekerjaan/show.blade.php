@@ -221,34 +221,36 @@
                         <!-- Timeline -->
                         <div class="timeline">
                           <!-- Timeline item 1 -->
-                          <div class="timeline-item active">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 1</div>
-                          </div>
+                      <!-- Timeline item 1 (active) -->
+<div class="timeline-item active">
+    <div class="timeline-circle"></div>
+    <div class="timeline-label">Step 1</div>
+  </div>
 
-                          <!-- Timeline item 2 -->
-                          <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 2</div>
-                          </div>
+  <!-- Timeline item 2 (active) -->
+  <div class="timeline-item active">
+    <div class="timeline-circle"></div>
+    <div class="timeline-label">Step 2</div>
+  </div>
 
-                          <!-- Timeline item 3 -->
-                          <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 3</div>
-                          </div>
+  <!-- Timeline item 3 (active) -->
+  <div class="timeline-item active">
+    <div class="timeline-circle"></div>
+    <div class="timeline-label">Step 3</div>
+  </div>
 
-                          <!-- Timeline item 4 -->
-                          <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 4</div>
-                          </div>
+  <!-- Timeline item 4 -->
+  <div class="timeline-item">
+    <div class="timeline-circle"></div>
+    <div class="timeline-label">Step 4</div>
+  </div>
 
-                          <!-- Timeline item 5 -->
-                          <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-label">Step 5</div>
-                          </div>
+  <!-- Timeline item 5 -->
+  <div class="timeline-item">
+    <div class="timeline-circle"></div>
+    <div class="timeline-label">Step 5</div>
+  </div>
+
                         </div>
                       </div>
 
