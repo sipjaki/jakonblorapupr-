@@ -42,7 +42,7 @@
   color: #333;
 }
 
-/* Connecting line between circles */
+/* Connecting line between circles (horizontal) */
 .timeline-item:not(:last-child):after {
   content: '';
   position: absolute;
@@ -86,10 +86,11 @@
 
 /* Remove the line before the first circle and after the last one */
 .timeline-item:first-child:after {
-  content: none;
+  content: none; /* Tidak ada garis penghubung untuk yang pertama */
 }
+
 .timeline-item:last-child:after {
-  content: none;
+  content: none; /* Tidak ada garis penghubung untuk yang terakhir */
 }
 
 
