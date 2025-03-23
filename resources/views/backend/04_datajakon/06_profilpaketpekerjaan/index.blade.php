@@ -208,7 +208,7 @@
          <th style="width: 400px; text-align:center;">Paket Status Pekerjaan</th>
          <th style="width: 200px; text-align:center;">Sumber Dana</th>
          <th style="width: 125px; text-align:center;">Pelaksanaan</th>
-         <th style="width: 400px; text-align:center;">CV/PT</th>
+         <th style="width: 300px; text-align:center;">CV/PT</th>
          <th style="width: 300px; text-align:center;">NIB</th>
          <th style="width: 200px; text-align:center;">Nilai Kontrak</th>
          <th style="width: 225px; text-align:center;">Jenis Kontrak</th>
