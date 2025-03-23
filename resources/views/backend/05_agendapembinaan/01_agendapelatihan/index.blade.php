@@ -276,8 +276,8 @@
 
         <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
          <td style="text-align: left;">{{$item->lokasi}}</td>
-         <td style="text-align: left; text-transform:justify;">{{$item->keterangan}}</td>
-         <td style="text-align: left; text-transform:justify;">{{$item->isiagenda}}</td>
+         <td style="text-align: left; text-align:justify;">{{$item->keterangan}}</td>
+         <td style="text-align: left; text-align:justify;">{{$item->isiagenda}}</td>
          <td style="text-align: center;">
             <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" width="300">
         </td>
