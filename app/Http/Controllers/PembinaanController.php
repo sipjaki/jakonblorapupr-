@@ -200,5 +200,87 @@ class PembinaanController extends Controller
 
 
 
+    // MENU BACKEND PROFIL PAKET PEKERJAAN
+
+
+    public function beagendapelatihan(Request $request)
+    {
+            $perPage = $request->input('perPage', 15);
+            $search = $request->input('search');
+
+            $query = agendapelatihan::query();
+
+            if ($search) {
+                $query->where('namakegiatan', 'LIKE', "%{$search}%")
+                    ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
+                    ->orWhere('penutupan', 'LIKE', "%{$search}%")
+                    ->orWhere('waktupelaksanaan', 'LIKE', "%{$search}%")
+                    ->orWhere('jumlahpeserta', 'LIKE', "%{$search}%")
+                    ->orWhere('lokasi', 'LIKE', "%{$search}%")
+                    ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                    ->orWhere('isiagenda', 'LIKE', "%{$search}%")
+                    ->orWhere('foto', 'LIKE', "%{$search}%")
+                    ->orWhere('materi', 'LIKE', "%{$search}%")
+        // -------------------------------------------------------------------------------
+                    ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+                        $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+                    });
+
+            }
+
+            $data = $query->paginate($perPage);
+
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('backend.05_agendapembinaan.01_agendapelatihan.partials.table', compact('data'))->render()
+                ]);
+            }
+
+            return view('backend.05_agendapembinaan.01_agendapelatihan.index', [
+                'title' => 'Agenda Pelatihan',
+                'data' => $data,
+                'perPage' => $perPage,
+                'search' => $search
+            ]);
+    }
+
+    // TKK DPUPR BLORA SHOW
+
+    public function beagendapelatihanshow($namakegiatan)
+    {
+            $dataagendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
+        // Ambil data user saat ini
+            $user = Auth::user();
+
+        return view('backend.04_datajakon.06_profilpaketpekerjaan.show', [
+            'title' => 'Data Details Agenda Pelatihan',
+            'data' => $dataagendapelatihan,
+        ]);
+    }
+
+
+        public function beagendapelatihandelete($namakegiatan)
+        {
+        // Cari item berdasarkan judul
+            $entry = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
+
+            if ($entry) {
+            // Jika ada file header yang terdaftar, hapus dari storage
+            // if (Storage::disk('public')->exists($entry->header)) {
+                //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/beagendapelatihan')->with('delete', 'Data Berhasil Di Hapus !');
+
+            }
+
+        return redirect()->back()->with('error', 'Item not found');
+        }
+
+
 }
 
