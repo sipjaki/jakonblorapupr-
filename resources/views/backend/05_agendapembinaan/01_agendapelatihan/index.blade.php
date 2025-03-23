@@ -278,10 +278,10 @@
          <td style="text-align: left;">{{$item->lokasi}}</td>
          <td style="text-align: left; text-align:justify;">{{$item->keterangan}}</td>
          <td style="text-align: left; text-align:justify;">{{$item->isiagenda}}</td>
-         <td style="text-align: center;">
-            <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" width="300">
+         <td style="text-align: center; gap:10px;">
+            <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" width="200" style="border-radius: 15px;">
         </td>
-        <td style="text-align: center;">
+        <td style="text-align: center; gap:10px;">
             <object data="{{ asset('storage/' . $item->materi) }}" type="application/pdf" width="300" height="200">
                 <p>PDF cannot be displayed.</p>
             </object>
