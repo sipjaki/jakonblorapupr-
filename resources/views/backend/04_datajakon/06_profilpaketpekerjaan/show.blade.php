@@ -1,3 +1,54 @@
+<style>
+
+.timeline {
+  display: flex;
+  justify-content: space-between; /* Menyebarkan elemen dari kiri ke kanan */
+  align-items: center;
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-item {
+  text-align: center;
+  position: relative;
+}
+
+.timeline-icon {
+  font-size: 30px;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  color: white;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+.timeline-icon:hover {
+  background-color: #333;
+}
+
+.timeline-time {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #555;
+}
+
+/* Garis tengah timeline */
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #ccc;
+  transform: translateX(-50%);
+}
+
+</style>
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -110,46 +161,44 @@
                         </script>
 
                     </div>
-
-                      <div class="app-content">
+                    <div class="app-content">
                         <!--begin::Container-->
                         <div class="container-fluid">
-                          <!-- Timelime example  -->
+                          <!-- Timeline example -->
                           <div class="row">
                             <div class="col-md-12">
                               <!-- The time line -->
                               <div class="timeline">
-                                <!-- timeline time label -->
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <div>
+                                <!-- Timeline item -->
+                                <div class="timeline-item">
                                   <i class="timeline-icon bi bi-envelope text-bg-primary"></i>
+                                  <span class="timeline-time">3 Jan. 2023</span>
                                 </div>
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                                <div>
+                                <!-- Timeline item -->
+                                <div class="timeline-item">
                                   <i class="timeline-icon bi bi-person text-bg-success"></i>
+                                  <span class="timeline-time">4 Jan. 2023</span>
                                 </div>
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                                <div>
+                                <!-- Timeline item -->
+                                <div class="timeline-item">
                                   <i class="timeline-icon bi bi-chat-text-fill text-bg-warning"></i>
+                                  <span class="timeline-time">5 Jan. 2023</span>
                                 </div>
-                                <!-- END timeline item -->
-                                <!-- timeline time label -->
-                                <div class="time-label"><span class="text-bg-success">3 Jan. 2023</span></div>
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <div>
+                                <!-- Timeline item -->
+                                <div class="timeline-item">
                                   <i class="timeline-icon bi bi-camera text-bg-primary"></i>
+                                  <span class="timeline-time">6 Jan. 2023</span>
                                 </div>
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                                <div>
+                                <!-- Timeline item -->
+                                <div class="timeline-item">
                                   <i class="timeline-icon bi bi-camera-film text-bg-info"></i>
+                                  <span class="timeline-time">7 Jan. 2023</span>
                                 </div>
-                                <!-- END timeline item -->
-                                <div><i class="timeline-icon bi bi-clock-fill text-bg-secondary"></i></div>
+                                <!-- Timeline item -->
+                                <div class="timeline-item">
+                                  <i class="timeline-icon bi bi-clock-fill text-bg-secondary"></i>
+                                  <span class="timeline-time">8 Jan. 2023</span>
+                                </div>
                               </div>
                             </div>
                             <!-- /.col -->
@@ -162,11 +211,6 @@
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-6">
-                            <!--begin::Header-->
-                            {{-- <div class="card-header"><div class="card-title">Quick Example</div></div> --}}
-                            <!--end::Header-->
-                            <!--begin::Form-->
-
                             <form>
                                 <!--begin::Body-->
                                 <div class="card-body">
