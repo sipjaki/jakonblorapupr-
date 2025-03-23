@@ -279,7 +279,7 @@ class PembinaanController extends Controller
 
         if ($request->ajax()) {
             return response()->json([
-                'html' => view('frontend.05_agendapembinaan.01_agendapelatihan.partials.table', compact('data'))->render()
+                'html' => view('backend.05_agendapembinaan.01_agendapelatihan.partials.table', compact('data'))->render()
             ]);
         }
 
@@ -303,7 +303,7 @@ class PembinaanController extends Controller
         $user = Auth::user();
 
 
-        return view('frontend.05_agendapembinaan.01_agendapelatihan.showpeserta', [
+        return view('backend.05_agendapembinaan.01_agendapelatihan.showpeserta', [
             'title' => 'Daftar Peserta Agenda',
             'data' => $dataagendapelatihan,
             'datapeserta' => $datapesertapelatihan,

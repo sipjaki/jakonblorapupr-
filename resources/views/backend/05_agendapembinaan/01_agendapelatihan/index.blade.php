@@ -180,7 +180,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/beskkallblora?search=${input}`)
+                            fetch(`/beagendapelatihan?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
