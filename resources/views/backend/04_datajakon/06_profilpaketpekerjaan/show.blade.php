@@ -1,5 +1,4 @@
 <style>
-
 .timeline {
   display: flex;
   justify-content: space-between;
