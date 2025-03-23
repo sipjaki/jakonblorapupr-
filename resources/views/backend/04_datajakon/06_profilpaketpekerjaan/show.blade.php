@@ -2,53 +2,114 @@
 /* Container for the timeline */
 
 .timeline {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 80%;
 }
 
 .circle {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: #4CAF50;
     border-radius: 50%;
     position: relative;
     z-index: 2;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+    transition: all 0.3s ease;
 }
 
 .line {
-    height: 10px;
-    width: 100px;
+    height: 5px;
+    flex-grow: 1;
     background-color: #ff5722;
     position: relative;
     z-index: 1;
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.8);
     transition: all 0.3s ease;
+}
+
+.line.active {
+    background-color: #ff9800; /* Garis menyala dengan warna oranye */
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.9);
 }
 
 .line:before {
     content: "";
     position: absolute;
     top: -5px;
-    left: -10px;
-    width: 120%;
+    left: 0;
+    width: 100%;
     height: 3px;
     background-color: #ff5722;
-    box-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.9);
 }
 
-.circle:nth-child(1) { margin-left: 0; }
-.circle:nth-child(3) { margin-left: 50px; }
-.circle:nth-child(5) { margin-left: 50px; }
-.circle:nth-child(7) { margin-left: 50px; }
-.circle:nth-child(9) { margin-left: 50px; }
-
-.timeline .line:nth-child(2), .timeline .line:nth-child(4), .timeline .line:nth-child(6), .timeline .line:nth-child(8) {
-    background-color: #ff5722;
+/* Pengaturan jarak dan urutan */
+.circle:first-child {
+    margin-left: 0;
 }
 
+.circle:nth-child(2) {
+    margin-left: 10px;
+}
+
+.circle:nth-child(4) {
+    margin-left: 10px;
+}
+
+.circle:nth-child(6) {
+    margin-left: 10px;
+}
+
+.circle:nth-child(8) {
+    margin-left: 10px;
+}
+
+.timeline-container > .circle {
+    z-index: 3;
+}
+JavaScript (script.js):
+javascript
+Copy
+document.addEventListener('DOMContentLoaded', function() {
+    // Ambil semua elemen garis
+    const lines = document.querySelectorAll('.line');
+
+    // Fungsi untuk menambahkan kelas active pada garis tertentu
+    function activateLine(index) {
+        lines[index].classList.add('active');
+    }
+
+    // Simulasi keluaran data atau event yang mengaktifkan garis
+    setTimeout(function() {
+        activateLine(0); // Mengaktifkan garis pertama (line-1)
+    }, 1000);
+
+    setTimeout(function() {
+        activateLine(2); // Mengaktifkan garis kedua (line-2)
+    }, 2000);
+
+    setTimeout(function() {
+        activateLine(4); // Mengaktifkan garis ketiga (line-3)
+    }, 3000);
+
+    setTimeout(function() {
+        activateLine(6); // Mengaktifkan garis keempat (line-4)
+    }, 4000);
+
+    setTimeout(function() {
+        activateLine(8); // Mengaktifkan garis kelima (line-5)
+    }, 5000);
+});
 
 </style>
 
@@ -164,7 +225,7 @@
                         </script>
 
                     </div>
-                    <div class="timeline">
+                    <div class="timeline-container">
                         <div class="circle" id="circle-1"></div>
                         <div class="line" id="line-1"></div>
                         <div class="circle" id="circle-2"></div>
