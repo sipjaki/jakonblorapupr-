@@ -22,7 +22,6 @@
   text-align: center;
   position: relative;
   flex: 1;
-  z-index: 1;
 }
 
 /* Circle style */
@@ -43,7 +42,7 @@
   color: #333;
 }
 
-/* Connecting line between circles (horizontal) */
+/* Connecting line between circles */
 .timeline-item:not(:last-child):after {
   content: '';
   position: absolute;
@@ -208,28 +207,46 @@
                         </script>
 
                     </div>
-
                     <div class="timeline-container">
                         <div class="timeline">
-                            <div class="timeline-item" id="item-1">
+                            <!-- Item Persiapan -->
+                            <div class="timeline-item" id="item-1"
+                                @if($data->prosespaket->persiapan === 'SELESAI') class="active" @endif>
                                 <div class="timeline-circle"></div>
-                                <div class="timeline-label">Step 1</div>
+                                <div class="timeline-label">Persiapan</div>
+                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->persiapan}}</div> <!-- Data disembunyikan -->
                             </div>
-                            <div class="timeline-item" id="item-2">
+
+                            <!-- Item Pengadaan -->
+                            <div class="timeline-item" id="item-2"
+                                @if($data->prosespaket->pengadaan === 'SELESAI') class="active" @endif>
                                 <div class="timeline-circle"></div>
-                                <div class="timeline-label">Step 2</div>
+                                <div class="timeline-label">Pengadaan</div>
+                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->pengadaan}}</div> <!-- Data disembunyikan -->
                             </div>
-                            <div class="timeline-item" id="item-3">
+
+                            <!-- Item Pelaksanaan -->
+                            <div class="timeline-item" id="item-3"
+                                @if($data->prosespaket->pelaksanaan === 'SELESAI') class="active" @endif>
                                 <div class="timeline-circle"></div>
-                                <div class="timeline-label">Step 3</div>
+                                <div class="timeline-label">Pelaksanaan</div>
+                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->pelaksanaan}}</div> <!-- Data disembunyikan -->
                             </div>
-                            <div class="timeline-item" id="item-4">
+
+                            <!-- Item Pemeliharaan -->
+                            <div class="timeline-item" id="item-4"
+                                @if($data->prosespaket->pemeliharaan === 'SELESAI') class="active" @endif>
                                 <div class="timeline-circle"></div>
-                                <div class="timeline-label">Step 4</div>
+                                <div class="timeline-label">Pemeliharaan</div>
+                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->pemeliharaan}}</div> <!-- Data disembunyikan -->
                             </div>
-                            <div class="timeline-item" id="item-5">
+
+                            <!-- Item Paket Selesai -->
+                            <div class="timeline-item" id="item-5"
+                                @if($data->prosespaket->paketselesai === 'SELESAI') class="active" @endif>
                                 <div class="timeline-circle"></div>
-                                <div class="timeline-label">Step 5</div>
+                                <div class="timeline-label">Paket Selesai</div>
+                                <div class="timeline-data" style="display: none;">{{$data->prosespaket->paketselesai}}</div> <!-- Data disembunyikan -->
                             </div>
                         </div>
                     </div>
