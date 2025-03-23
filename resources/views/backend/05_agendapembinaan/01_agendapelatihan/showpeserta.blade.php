@@ -94,7 +94,7 @@
                                     <tr>
                                         <th style="width: 10px; text-align:center;">No</th>
                                         <th style="width: 300px; text-align:center;">Nama Lengkap</th>
-                                        <th style="width: 300px; text-align:center;">Jenjang Pendidikan</th>
+                                        {{-- <th style="width: 300px; text-align:center;">Jenjang Pendidikan</th> --}}
                                         <th style="width: 100px; text-align:center;">Nik</th>
                                         <th style="width: 200px; text-align:center;">Tanggal Lahir</th>
                                         <th style="width: 200px; text-align:center;">No Telepon </th>
@@ -109,7 +109,7 @@
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->user->name }}</td>
-                                        <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td>
+                                        {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td> --}}
                                         <td style="text-align: center;">{{ $item->nik }}</td>
                                         <td style="text-align: center;">{{ $item->jeniskelamin }}</td>
                                         <td style="text-align: center;">
