@@ -2,10 +2,10 @@
 
 .timeline {
   display: flex;
-  justify-content: space-between; /* Menyebarkan elemen dari kiri ke kanan */
+  justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .timeline-item {
@@ -13,29 +13,24 @@
   position: relative;
 }
 
-.timeline-icon {
-  font-size: 30px;
-  display: inline-block;
-  padding: 10px;
+.timeline-circle {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background-color: #ddd;
-  color: white;
-  margin: 0 10px;
-  transition: background-color 0.3s;
-}
-
-.timeline-icon:hover {
-  background-color: #333;
+  background-color: silver;  /* Warna lingkaran silver */
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Agar lingkaran berada di atas garis */
 }
 
 .timeline-time {
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 12px;
   color: #555;
 }
 
-/* Garis tengah timeline */
+/* Garis penghubung timeline */
 .timeline:before {
   content: '';
   position: absolute;
@@ -45,6 +40,30 @@
   width: 2px;
   background-color: #ccc;
   transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Hanya menghubungkan titik 1 sampai 4 */
+.timeline-item:nth-child(1):after,
+.timeline-item:nth-child(2):after,
+.timeline-item:nth-child(3):after,
+.timeline-item:nth-child(4):after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 30px;
+  height: 2px;
+  background-color: #ccc;  /* Warna garis penghubung */
+}
+
+.timeline-item:nth-child(5) .timeline-circle {
+  background-color: green;  /* Warna lingkaran terakhir (full) hijau */
+}
+
+/* Membatasi garis penghubung pada item ke-5 */
+.timeline-item:nth-child(5):after {
+  content: none;  /* Tidak ada garis setelah item 5 */
 }
 
 </style>
@@ -161,43 +180,39 @@
                         </script>
 
                     </div>
+
                     <div class="app-content">
                         <!--begin::Container-->
                         <div class="container-fluid">
                           <!-- Timeline example -->
                           <div class="row">
                             <div class="col-md-12">
-                              <!-- The time line -->
+                              <!-- The timeline -->
                               <div class="timeline">
-                                <!-- Timeline item -->
+                                <!-- Timeline item 1 -->
                                 <div class="timeline-item">
-                                  <i class="timeline-icon bi bi-envelope text-bg-primary"></i>
+                                  <div class="timeline-circle"></div>
                                   <span class="timeline-time">3 Jan. 2023</span>
                                 </div>
-                                <!-- Timeline item -->
+                                <!-- Timeline item 2 -->
                                 <div class="timeline-item">
-                                  <i class="timeline-icon bi bi-person text-bg-success"></i>
+                                  <div class="timeline-circle"></div>
                                   <span class="timeline-time">4 Jan. 2023</span>
                                 </div>
-                                <!-- Timeline item -->
+                                <!-- Timeline item 3 -->
                                 <div class="timeline-item">
-                                  <i class="timeline-icon bi bi-chat-text-fill text-bg-warning"></i>
+                                  <div class="timeline-circle"></div>
                                   <span class="timeline-time">5 Jan. 2023</span>
                                 </div>
-                                <!-- Timeline item -->
+                                <!-- Timeline item 4 -->
                                 <div class="timeline-item">
-                                  <i class="timeline-icon bi bi-camera text-bg-primary"></i>
+                                  <div class="timeline-circle"></div>
                                   <span class="timeline-time">6 Jan. 2023</span>
                                 </div>
-                                <!-- Timeline item -->
+                                <!-- Timeline item 5 -->
                                 <div class="timeline-item">
-                                  <i class="timeline-icon bi bi-camera-film text-bg-info"></i>
+                                  <div class="timeline-circle"></div>
                                   <span class="timeline-time">7 Jan. 2023</span>
-                                </div>
-                                <!-- Timeline item -->
-                                <div class="timeline-item">
-                                  <i class="timeline-icon bi bi-clock-fill text-bg-secondary"></i>
-                                  <span class="timeline-time">8 Jan. 2023</span>
                                 </div>
                               </div>
                             </div>
