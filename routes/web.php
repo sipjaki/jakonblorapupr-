@@ -538,6 +538,7 @@ Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [Paketpekerjaanmasjaki
 Route::get('/beagendapelatihan', [PembinaanController::class, 'beagendapelatihan'])->middleware('auth');
 Route::get('/beagendapelatihanpeserta/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshowpeserta'])->middleware('auth');
 Route::get('/beagendapelatihan/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshow'])->middleware('auth');
+Route::delete('/beagendapelatihanpeserta/delete/{id}', [PembinaanController::class, 'beagendapelatihanpesertadelete'])->middleware('auth');
 Route::delete('/beagendapelatihan/delete/{namakegiatan}', [PembinaanController::class, 'beagendapelatihandelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________
 

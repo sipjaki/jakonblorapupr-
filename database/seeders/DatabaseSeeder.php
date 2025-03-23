@@ -11754,7 +11754,7 @@ pesertapelatihan::create([
     'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
+    'verifikasi'                 => 'LOLOS',
 ]);
 pesertapelatihan::create([
     'agendapelatihan_id'            => 2,
@@ -11767,7 +11767,7 @@ pesertapelatihan::create([
     'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
+    'verifikasi'                 => 'LOLOS',
 ]);
 pesertapelatihan::create([
     'agendapelatihan_id'            => 3,
@@ -11780,7 +11780,7 @@ pesertapelatihan::create([
     'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
+    'verifikasi'                 => 'LOLOS',
 ]);
 pesertapelatihan::create([
     'agendapelatihan_id'            => 1,
@@ -11793,7 +11793,7 @@ pesertapelatihan::create([
     'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
+    'verifikasi'                 => 'LOLOS',
 ]);
 pesertapelatihan::create([
     'agendapelatihan_id'            => 1,
@@ -11806,7 +11806,7 @@ pesertapelatihan::create([
     'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
     'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
+    'verifikasi'                 => 'LOLOS',
 ]);
 
 

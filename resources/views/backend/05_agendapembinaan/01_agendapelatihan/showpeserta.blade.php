@@ -106,31 +106,37 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($subdata as $item )
+                                @foreach ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->nama_pengurus }}</td>
-                                        <td style="text-align: left;">{{ $item->sub_klasifikasi_layanan }}</td>
-                                        <td style="text-align: center;">{{ $item->kode }}</td>
-                                        <td style="text-align: center;">{{ $item->kualifikasi }}</td>
-                                        <td style="text-align: left;">{{ $item->penerbit }}</td>
+                                        <td style="text-align: left;">{{ $item->user->name }}</td>
+                                        <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td>
+                                        <td style="text-align: center;">{{ $item->nik }}</td>
+                                        <td style="text-align: center;">{{ $item->jeniskelamin }}</td>
                                         <td style="text-align: center;">
-                                            {{ \Carbon\Carbon::parse($item->tanggal_terbit)->translatedFormat('d F Y') }}
+                                            {{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('d F Y') }}
                                         </td>
-                                        <td style="text-align: center;">
-                                            {{ \Carbon\Carbon::parse($item->masa_berlaku)->translatedFormat('d F Y') }}
+                                        <td style="text-align: left;">{{ $item->notelepon }}</td>
+                                        <td style="text-align: left;">{{ $item->instansi }}</td>
+
+                                        <td style="text-align: center; gap:10px;">
+                                            <object data="{{ asset('storage/' . $item->sertifikat) }}" type="application/pdf" width="300" height="200">
+                                                <p>Sertifikat Belum Terbit</p>
+                                            </object>
                                         </td>
-                                               <td style="text-align: left;">{{ $item->nama_psjk }}</td>
-                                        <td style="text-align: left;">{{ $item->sub_kualifikasi_bu }}</td>
+
+                                        <td style="text-align: left;">{{ $item->verifikasi }}</td>
+
+
                                         <td style="text-align: center;">
                                             <!-- Show Icon -->
                                          {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                                                 <i class="bi bi-eye"></i>
                                             </a>
                                             <!-- Update Icon --> --}}
-                                            <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+                                            {{-- <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
                                                 <i class="bi bi-pencil-square"></i>
-                                            </a>
+                                            </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
                                             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
@@ -171,7 +177,7 @@
                                             document.getElementById('itemName').innerText = id;
 
                                             // Atur URL penghapusan
-                                            var deleteUrl = "/bebujkkonstruksiklasifikasi/delete/" + encodeURIComponent(id);
+                                            var deleteUrl = "/beagendapelatihanpeserta/delete/" + encodeURIComponent(id);
                                             document.getElementById('deleteForm').action = deleteUrl;
                                         }
 
