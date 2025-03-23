@@ -287,7 +287,7 @@
             </object>
         </td>
          <td style="text-align: center; vertical-align: middle; width: 100%; align-items:center; gap:10px; margin:left:25px;">
-            <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->id) }}" style="text-decoration: none;">
+            <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->namakegiatan) }}" style="text-decoration: none;">
             <button
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='	#6B7280'; this.style.color='white';"

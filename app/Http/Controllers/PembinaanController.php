@@ -259,6 +259,62 @@ class PembinaanController extends Controller
     }
 
 
+    public function beagendapelatihanshowpeserta(Request $request, $namakegiatan)
+    {
+        $perPage = $request->input('perPage', 50);
+        $search = $request->input('search');
+
+        $query = pesertapelatihan::query();
+
+        if ($search) {
+            $query->where('jeniskelamin', 'LIKE', "%{$search}%")
+                  ->orWhere('instansi', 'LIKE', "%{$search}%")
+                  ->orWhereHas('user', function ($q) use ($search) {
+                      $q->where('user', 'LIKE', "%{$search}%");
+                  });
+
+        }
+
+        $datapesertapelatihan = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.05_agendapembinaan.01_agendapelatihan.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        $agendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
+
+        // Jika asosiasi tidak ditemukan, tampilkan 404
+        if (!$agendapelatihan) {
+            return abort(404, 'Asosiasi tidak ditemukan');
+        }
+
+        $user = Auth::user();
+
+            $datapesertapelatihan = pesertapelatihan::where('agendapelatihan_id', $agendapelatihan->id)
+                        ->select(['id', 'user_id', 'jeniskelamin', 'instansi'])
+                        ->paginate(25);
+
+        $dataagendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
+        // $datauser = user::all();
+
+        // Ambil data user saat ini
+        $user = Auth::user();
+
+
+        return view('frontend.05_agendapembinaan.01_agendapelatihan.showpeserta', [
+            'title' => 'Daftar Peserta Agenda',
+            'data' => $dataagendapelatihan,
+            'datapeserta' => $datapesertapelatihan,
+            'perPage' => $perPage,
+            'search' => $search,
+            'user' => $user,
+            // 'datapeserta' => $datauser
+        ]);
+    }
+
+
         public function beagendapelatihandelete($namakegiatan)
         {
         // Cari item berdasarkan judul
