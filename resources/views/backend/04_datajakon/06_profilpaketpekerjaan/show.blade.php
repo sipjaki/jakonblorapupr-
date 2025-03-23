@@ -127,96 +127,94 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>Nama Lengkap
+                                                    <i class="bi bi-clipboard-data" style="margin-right: 8px; color: navy;"></i>Nama Pekerjaan
                                                 </label>
                                                 <input class="form-control" value="{{$data->namapekerjaan}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i>Alamat
+                                                    <i class="bi bi-tools" style="margin-right: 8px; color: navy;"></i>Jenis Pekerjaan
                                                 </label>
                                                 <input class="form-control" value="{{$data->profiljenispekerjaan->jenispekerjaan}}" readonly />
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-calendar-check" style="margin-right: 8px; color: navy;"></i>Tahun Lulus
+                                                    <i class="bi bi-check-circle-fill" style="margin-right: 8px; color: navy;"></i>Status Pekerjaan
                                                 </label>
                                                 <input class="form-control" value="{{$data->paketstatuspekerjaan->paketstatuspekerjaan}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-mortarboard-fill" style="margin-right: 8px; color: navy;"></i>Universitas/Sekolah/Instansi
+                                                    <i class="bi bi-bank" style="margin-right: 8px; color: navy;"></i>Sumber Dana
                                                 </label>
                                                 <input class="form-control" value="{{$data->sumberdana->sumberdana}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-award-fill" style="margin-right: 8px; color: navy;"></i>Jenjang Pendidikan
+                                                    <i class="bi bi-calendar-date" style="margin-right: 8px; color: navy;"></i>Tahun Pelaksanaan
                                                 </label>
                                                 <input class="form-control" value="{{$data->tahunpilihan->tahunpilihan}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-briefcase-fill" style="margin-right: 8px; color: navy;"></i>Jabatan Kerja
+                                                    <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i>CV/PT
                                                 </label>
                                                 <input class="form-control" value="{{$data->cvptpenyedia}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-award-fill" style="margin-right: 8px; color: navy;"></i>Jenjang
+                                                    <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i>Nomor Induk Berusaha
                                                 </label>
                                                 <input class="form-control" value="{{$data->nib}}" readonly/>
                                             </div>
-
                                         </div>
-                                        <!-- End Left Column -->
+                                            <!-- End Left Column -->
                                         <!-- Right Column (6/12) -->
                                         <div class="col-md-6">
-
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-building-fill" style="margin-right: 8px; color: navy;"></i>LPS Penerbit
+                                                    <i class="bi bi-file-earmark-ruled" style="margin-right: 8px; color: navy;"></i>Nilai Kontrak
                                                 </label>
                                                 <input class="form-control" value="{{$data->nilaikontrak}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-book-fill" style="margin-right: 8px; color: navy;"></i>Jurusan
+                                                    <i class="bi bi-file-earmark-text-fill" style="margin-right: 8px; color: navy;"></i>Jenis Kontrak
                                                 </label>
                                                 <input class="form-control" value="{{$data->jeniskontrak}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-book-fill" style="margin-right: 8px; color: navy;"></i>Jurusan
+                                                    <i class="bi bi-file-earmark-lock-fill" style="margin-right: 8px; color: navy;"></i>Karakteristik Kontrak
                                                 </label>
                                                 <input class="form-control" value="{{$data->karakteristikkontrak}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-calendar-check-fill" style="margin-right: 8px; color: navy;"></i>Tanggal Terbit
+                                                    <i class="bi bi-calendar-event-fill" style="margin-right: 8px; color: navy;"></i>Mulai
                                                 </label>
                                                 <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanmulai)->translatedFormat('d F Y') }}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i>Tanggal Habis
+                                                    <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i>Selesai
                                                 </label>
                                                 <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanselesai)->translatedFormat('d F Y') }}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Progress
+                                                    <i class="bi bi-pie-chart-fill" style="margin-right: 8px; color: navy;"></i>Progress Pekerjaan
                                                 </label>
 
                                                 <!-- Progress bar -->
@@ -249,10 +247,9 @@
                                                 <input class="form-control mt-2" value="{{$data->progress}}%" readonly/>
                                             </div>
 
-
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Status Terbit
+                                                    <i class="bi bi-house-door-fill" style="margin-right: 8px; color: navy;"></i>Dinas
                                                 </label>
                                                 <input class="form-control" value="{{$data->dinas}}" readonly/>
                                             </div>
