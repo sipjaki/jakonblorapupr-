@@ -1,6 +1,7 @@
 <style>
 /* Timeline container */
 /* Container for the timeline */
+/* Container for the timeline */
 .timeline-container {
   display: flex;
   justify-content: center;
@@ -14,6 +15,7 @@
   justify-content: space-between;
   position: relative;
   width: 80%;
+  align-items: center;
 }
 
 /* Timeline item (circle and label) */
@@ -49,10 +51,11 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 2px;
-  background-color: #ccc;
+  height: 6px; /* Lebarkan garis penghubung */
+  background-color: #ddd;
   z-index: 1;
   transform: translateY(-50%);
+  border-radius: 10px; /* Membuat garis lebih elegan */
 }
 
 /* Active circle style */
@@ -67,9 +70,10 @@
   top: 50%;
   left: 100%;
   width: 50px;
-  height: 2px;
-  background-color: #ccc;
+  height: 6px; /* Lebarkan garis penghubung */
+  background-color: #ddd;
   transform: translateY(-50%);
+  border-radius: 10px; /* Membuat garis lebih elegan */
 }
 
 /* Active line style */
